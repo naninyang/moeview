@@ -1,0 +1,1013 @@
+.categories, .ai
+  padding: 0 0 design.rem(102)
+  min-height: calc(100dvh - design.rem(78))
+  font-size: design.rem(16)
+
+  .loading, .error
+    display: flex
+    justify-content: center
+    align-items: center
+    padding: 0 calc(env(safe-area-inset-right) + design.rem(12)) 0 calc(env(safe-area-inset-left) + design.rem(12))
+    height: calc(100dvh - design.rem(133))
+    font-weight: 700
+    color: design.$hex-accent
+    text-align: center
+
+  .error
+    gap: design.rem(15)
+
+    button
+      background: none
+      text-decoration: underline
+      color: design.$hex-accent
+
+  > h1
+    display: flex
+    gap: design.rem(2)
+    padding: design.rem(15) calc(env(safe-area-inset-right) + design.rem(7)) design.rem(3) calc(env(safe-area-inset-left) + design.rem(7))
+    font-size: design.rem(20)
+    font-weight: 800
+    line-height: 1.2
+
+    @include design.mq(maxSmall)
+      flex-direction: column
+
+    @include design.mq(minMedium)
+      align-items: flex-end
+      gap: design.rem(17)
+
+    span
+      display: flex
+      gap: design.rem(5)
+
+    i::before
+      content: '•'
+      position: relative
+      top: design.rem(-2)
+      padding: 0 design.rem(4)
+      font-size: design.rem(20)
+      font-style: normal
+      color: design.$hex-accent
+
+    em
+      font-size: design.rem(16)
+      font-weight: 900
+      font-style: normal
+      color: design.$hex-accent
+
+      @include design.mq(maxSmall)
+        padding-left: design.rem(24)
+
+  section.error
+    flex-direction: column
+
+    p
+      font-weight: 500
+
+      button
+        font-weight: 900
+
+.categories
+  .choice
+    display: flex
+    flex-direction: column
+    gap: design.rem(7)
+    margin-bottom: design.rem(12)
+    padding: design.rem(12) calc(env(safe-area-inset-right) + design.rem(12)) 0 calc(env(safe-area-inset-left) + design.rem(12))
+
+    ul
+      display: flex
+      gap: design.rem(7)
+      padding-left: design.rem(20)
+
+      li
+        display: flex
+        gap: design.rem(7)
+
+        &::before
+          content: '/'
+          color: design.$hex-accent
+
+        &:first-of-type
+          &::before
+            display: none
+
+        &.current, &:hover, &:focus
+          a
+            color: design.$hex-accent
+            text-decoration: underline
+
+        a
+          color: design.$hex-black
+          font-weight: 800
+          letter-spacing: -.07em
+
+    p
+      display: flex
+      gap: design.rem(5)
+      font-size: design.rem(14)
+      font-weight: 800
+      color: design.$hex-accent
+
+      i
+        display: inline-block
+        margin-top: design.rem(2)
+        width: design.rem(14)
+        height: design.rem(14)
+
+  .content
+    > strong
+      display: block
+      padding: 0 calc(env(safe-area-inset-right) + design.rem(12)) design.rem(7) calc(env(safe-area-inset-left) + design.rem(12))
+      font-size: design.rem(16)
+      font-weight: 800
+
+      @include design.mq(maxSmall)
+        font-size: design.rem(14)
+
+    .tag-container
+      display: flex
+      flex-direction: column
+      gap: design.rem(7)
+      padding: design.rem(27) 0 design.rem(57)
+      background-color: design.$hex-azalea
+
+      strong, .tag-list
+        padding: 0 calc(env(safe-area-inset-right) + design.rem(12)) 0 calc(env(safe-area-inset-left) + design.rem(12))
+
+      strong
+        color: design.$hex-black
+
+      .tag-list
+        display: flex
+        flex-wrap: wrap
+        gap: design.rem(7)
+
+        @include design.mq(maxSmall)
+          gap: design.rem(3)
+
+        li
+          padding: design.rem(3) 0
+
+        .current
+          a
+            span
+              background-color: design.$hex-black
+              border-color: design.$hex-accent
+              color: design.$hex-light
+
+        a
+          display: inline-flex
+          gap: design.rem(7)
+
+          @include design.mq(maxSmall)
+            gap: design.rem(3)
+
+          &:hover, &:focus
+            span
+              background-color: design.$hex-black
+              border-color: design.$hex-accent
+              color: design.$hex-light
+
+          span
+            display: inline-flex
+            align-items: center
+            background-color: design.$hex-white
+            border: 1px solid design.$hex-light
+            border-radius: design.rem(32)
+            padding: 0 design.rem(17)
+            height: design.rem(32)
+            font-size: design.rem(16)
+            white-space: nowrap
+            color: design.$hex-dark
+            transition: all .4s cubic-bezier(.4,0,.2,1)
+
+            @include design.mq(maxSmall)
+              border-radius: design.rem(27)
+              padding: 0 design.rem(12)
+              height: design.rem(27)
+              font-size: design.rem(14)
+
+    .headline
+      display: flex
+      align-items: center
+      padding: design.rem(52) calc(env(safe-area-inset-right) + design.rem(12)) design.rem(17) calc(env(safe-area-inset-left) + design.rem(12))
+
+      &.without-select
+        flex-direction: column
+        align-items: flex-start
+        gap: design.rem(12)
+
+        p
+          color: design.$hex-light
+
+      h1, h2
+        font-size: design.rem(20)
+        font-weight: 800
+
+        @include design.mq(minMedium)
+          font-size: design.rem(24)
+
+      h1
+        em
+          font-size: design.rem(32)
+          font-style: normal
+          line-height: 1.25
+          color: design.$hex-light
+
+        span
+          padding-left: design.rem(12)
+          font-size: design.rem(14)
+          font-weight: 800
+          line-height: 1.25
+          color: design.$hex-azalea
+          white-space: nowrap
+
+          @include design.mq(minMedium)
+            font-size: design.rem(16)
+
+        strong
+          display: block
+          margin-top: design.rem(7)
+          font-size: design.rem(16)
+          font-weight: 800
+          line-height: 1.25
+          color: design.$hex-white
+
+      h2
+        a
+          color: design.$hex-dark
+          line-height: 1.42857143
+
+          &:hover, &:focus
+            color: design.$hex-accent
+
+          span
+            white-space: nowrap
+
+      .select
+        display: flex
+        gap: design.rem(7)
+
+        select, button
+          background-color: design.$hex-white
+          border: 1px solid rgba(design.$hex-black, .7)
+          border-radius: design.rem(3)
+          padding: design.rem(3) design.rem(7)
+          font-weight: 800
+
+          @include design.mq(maxSmall)
+            font-size: design.rem(14)
+
+      > a
+        font-weight: 800
+        color: design.$hex-dark
+
+        @include design.mq(maxSmall)
+          font-size: design.rem(14)
+
+        &:hover, &:focus
+          span
+            color: design.$hex-accent
+            border-bottom: design.rem(2) solid design.$hex-accent
+
+          svg
+            path
+              fill: design.$hex-accent
+
+    section
+      display: flex
+      flex-wrap: wrap
+      gap: design.rem(12)
+      padding: 0 env(safe-area-inset-right) 0 calc(env(safe-area-inset-left) + design.rem(12))
+
+      @include design.mq(minMedium)
+        padding: 0 env(safe-area-inset-right) 0 calc(env(safe-area-inset-left) + design.rem(12))
+
+      a
+        &:hover, &:focus
+          .thumbnail img
+            transform: scale(1.07)
+
+          strong
+            color: design.$hex-accent
+
+        strong
+          color: design.$hex-dark
+          white-space: normal
+          word-break: keep-all
+          word-break: normal
+          line-height: 1.25
+          letter-spacing: -.07em
+          font-weight: normal
+          transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1) 0s
+
+          span
+            font-variation-settings: 'opsz' 700, 'wght' 700
+
+          cite
+            display: block
+            font-size: design.rem(14)
+            color: design.$hex-accent
+
+          @include design.mq(minMedium)
+            font-size: design.rem(16)
+
+  &:not(.amusement)
+    margin-top: calc(env(safe-area-inset-top) + design.rem(114))
+
+    .headline
+      justify-content: space-between
+      gap: design.rem(7)
+
+      @include design.mq(minMedium)
+        justify-content: flex-start
+        gap: design.rem(27)
+
+      > a
+        display: inline-flex
+        align-items: center
+
+        &:hover, &:focus
+          span
+            border-bottom: 0
+
+        svg
+          display: inline-block
+          width: design.rem(24)
+          height: design.rem(24)
+
+        @include design.mq(maxSmall)
+          span
+            @include design.screen-reader-only
+
+    section
+      &.game
+        a
+          width: calc(50% - design.rem(12))
+
+          @include design.mq(minSmall)
+            width: calc(50% - design.rem(12))
+
+          @include design.mq(minMedium)
+            width: calc(33.33% - design.rem(12))
+
+          @include design.mq(minLarge)
+            width: calc(25% - design.rem(12))
+
+          @include design.mq(minExtraLarge)
+            width: calc(20% - design.rem(12))
+
+          @include design.mq(maxSmall)
+            &:nth-of-type(3)
+              display: none
+
+          @include design.mq(maxMedium)
+            &:nth-of-type(4)
+              display: none
+
+          @include design.mq(maxLarge)
+            &:nth-of-type(5)
+              display: none
+
+          @include design.mq(maxExtraSmall)
+            &:nth-of-type(3), &:nth-of-type(4)
+              display: flex
+
+      .loading-indicator
+        display: flex
+        flex-direction: column
+        gap: design.rem(7)
+        padding-bottom: design.rem(12)
+        width: calc(33.33% - design.rem(12))
+        font-size: design.rem(14)
+
+        @include design.mq(minSmall)
+          width: calc(25% - design.rem(12))
+
+        @include design.mq(minMedium)
+          width: calc(20% - design.rem(12))
+
+        @include design.mq(minLarge)
+          width: calc(16.66666667% - design.rem(12))
+
+        @include design.mq(minExtraLarge)
+          width: calc(14.28571429% - design.rem(12))
+
+        @include design.mq(maxSmall)
+          &:nth-of-type(5)
+            display: none
+
+        @include design.mq(maxMedium)
+          &:nth-of-type(6)
+            display: none
+
+        @include design.mq(maxLarge)
+          &:nth-of-type(7)
+            display: none
+
+        @include design.mq(maxExtraSmall)
+          &:nth-of-type(5), &:nth-of-type(6)
+            display: flex
+
+        &.loading-game
+          width: calc(50% - design.rem(12))
+
+          @include design.mq(minSmall)
+            width: calc(50% - design.rem(12))
+
+          @include design.mq(minMedium)
+            width: calc(33.33% - design.rem(12))
+
+          @include design.mq(minLarge)
+            width: calc(25% - design.rem(12))
+
+          @include design.mq(minExtraLarge)
+            width: calc(20% - design.rem(12))
+
+          @include design.mq(maxSmall)
+            &:nth-of-type(3)
+              display: none
+
+          @include design.mq(maxMedium)
+            &:nth-of-type(4)
+              display: none
+
+          @include design.mq(maxLarge)
+            &:nth-of-type(5)
+              display: none
+
+          @include design.mq(maxExtraSmall)
+            &:nth-of-type(3), &:nth-of-type(4)
+              display: flex
+
+          i
+            aspect-ratio: 460 / 215
+
+        i
+          display: block
+          animation: loading 1.5s infinite
+          background: linear-gradient(90deg, #EEEEEE 25%, #DDDDDD 50%, #EEEEEE 75%)
+          background-size: 200% 100%
+          border-radius: design.rem(7)
+          width: 100%
+          height: auto
+          aspect-ratio: 390 / 560
+          object-fit: cover
+          transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1) 0s
+
+        strong
+          display: block
+          width: 100%
+          height: design.rem(20)
+          background: linear-gradient(90deg, #EEEEEE 25%, #DDDDDD 50%, #EEEEEE 75%)
+          background-size: 200% 100%
+          animation: loading 1.5s infinite
+
+      a
+        display: flex
+        flex-direction: column
+        gap: design.rem(7)
+        padding-bottom: design.rem(12)
+        width: calc(33.33% - design.rem(12))
+        font-size: design.rem(14)
+
+        @include design.mq(minSmall)
+          width: calc(25% - design.rem(12))
+
+        @include design.mq(minMedium)
+          width: calc(20% - design.rem(12))
+
+        @include design.mq(minLarge)
+          width: calc(16.66666667% - design.rem(12))
+
+        @include design.mq(minExtraLarge)
+          width: calc(14.28571429% - design.rem(12))
+
+        @include design.mq(maxSmall)
+          &:nth-of-type(5)
+            display: none
+
+        @include design.mq(maxMedium)
+          &:nth-of-type(6)
+            display: none
+
+        @include design.mq(maxLarge)
+          &:nth-of-type(7)
+            display: none
+
+        @include design.mq(maxExtraSmall)
+          &:nth-of-type(5), &:nth-of-type(6)
+            display: flex
+
+  &.amusement
+    .welcome
+      display: flex
+      flex-direction: column
+      gap: design.rem(17)
+
+      h1
+        text-align: center
+        padding-top: design.rem(12)
+        font-size: design.rem(20)
+        font-weight: 800
+
+        @include design.mq(minMedium)
+          padding-top: design.rem(27)
+          font-size: design.rem(24)
+
+      .unselect
+        display: flex
+        flex-direction: column
+        flex-grow: 1
+        justify-content: center
+        align-items: center
+        gap: design.rem(52)
+        font-weight: 700
+        color: design.$hex-accent
+        text-align: center
+
+        .form, .tags
+          width: 100%
+
+        .form
+          display: flex
+          flex-direction: column
+          justify-content: center
+          align-items: center
+          gap: design.rem(7)
+          max-width: design.rem(370)
+          font-weight: 700
+          color: design.$hex-accent
+          text-align: center
+
+        .tags
+          padding: 0 design.rem(27)
+
+          > strong
+            display: block
+            padding-bottom: design.rem(12)
+            font-size: design.rem(16)
+            font-weight: 800
+
+            @include design.mq(maxSmall)
+              font-size: design.rem(14)
+
+          .tag-list
+            display: flex
+            flex-wrap: wrap
+            justify-content: center
+            gap: design.rem(7)
+
+            @include design.mq(maxSmall)
+              gap: design.rem(3)
+
+            li
+              padding: design.rem(3) 0
+
+            .current
+              a
+                span
+                  background-color: design.$hex-accent
+                  border-color: design.$hex-white
+                  color: design.$hex-white
+
+            a
+              display: inline-flex
+              gap: design.rem(7)
+
+              @include design.mq(maxSmall)
+                gap: design.rem(3)
+
+              &:hover, &:focus
+                span
+                  background-color: design.$hex-accent
+                  border-color: design.$hex-white
+                  color: design.$hex-white
+
+              span
+                display: inline-flex
+                align-items: center
+                border: 1px solid rgba(design.$hex-black, .2)
+                border-radius: design.rem(32)
+                padding: 0 design.rem(17)
+                height: design.rem(32)
+                font-size: design.rem(16)
+                white-space: nowrap
+                color: design.$hex-dark
+                transition: all .4s cubic-bezier(.4,0,.2,1)
+
+                @include design.mq(maxSmall)
+                  border-radius: design.rem(27)
+                  padding: 0 design.rem(12)
+                  height: design.rem(27)
+                  font-size: design.rem(14)
+
+      button
+        background-color: design.$hex-accent
+        border: design.rem(2) solid design.$hex-accent
+        color: design.$hex-white
+        font-weight: 800
+
+      select
+        background-color: design.$hex-white
+        border: design.rem(2) solid rgba(design.$hex-black, .3)
+
+      select, button
+        width: 100%
+        border-radius: design.rem(3)
+        padding: design.rem(3) design.rem(7)
+        font-size: design.rem(16)
+
+        @include design.mq(minMedium)
+          max-width: design.rem(570)
+          padding: design.rem(7) design.rem(12)
+          font-size: design.rem(20)
+
+      .visual
+        svg
+          max-width: design.rem(345)
+          width: 100%
+          height: auto
+          aspect-ratio: 345 / 294
+
+    .content
+      section
+        padding: design.rem(27) env(safe-area-inset-right) 0 calc(env(safe-area-inset-left) + design.rem(12))
+
+        &.tag-error
+          height: auto
+
+        @include design.mq(minMedium)
+          padding: design.rem(52) env(safe-area-inset-right) 0 calc(env(safe-area-inset-left) + design.rem(12))
+
+        &.game
+          a
+            width: calc(100% - design.rem(12))
+
+            @include design.mq(minSmall)
+              width: calc(50% - design.rem(12))
+
+            @include design.mq(minMedium)
+              width: calc(25% - design.rem(12))
+
+            @include design.mq(minExtraLarge)
+              width: calc(16.66666667% - design.rem(12))
+
+        a
+          display: flex
+          flex-direction: column
+          gap: design.rem(7)
+          padding-bottom: design.rem(12)
+          font-size: design.rem(14)
+          width: calc(50% - design.rem(12))
+
+          @include design.mq(minSmall)
+            width: calc(25% - design.rem(12))
+
+          @include design.mq(minLarge)
+            width: calc(16.66666667% - design.rem(12))
+
+          @include design.mq(minExtraLarge)
+            width: calc(12.5% - design.rem(12))
+
+  .asides
+    display: flex
+    gap: design.rem(12)
+    position: relative
+    margin: design.rem(52) calc(env(safe-area-inset-right) + design.rem(12)) 0 calc(env(safe-area-inset-left) + design.rem(12))
+    padding: design.rem(52) 0
+
+    @include design.mq(maxSmall)
+      flex-direction: column
+      gap: design.rem(52)
+      padding: design.rem(52) design.rem(52)
+
+      hr
+        margin: 0
+        width: 100%
+        height: 1px
+
+      aside
+        padding: 0
+
+    @include design.mq(minMedium)
+      hr
+        width: 1px
+        @include design.coln
+
+      aside
+        @include design.col
+
+    > div
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      border-radius: design.rem(7)
+
+    hr
+      position: relative
+      display: block
+      background-color: design.$hex-white
+
+    aside
+      margin: 0
+
+  aside
+    display: flex
+    position: relative
+    flex-direction: column
+    gap: design.rem(12)
+    margin: design.rem(52) calc(env(safe-area-inset-right) + design.rem(12)) 0 calc(env(safe-area-inset-left) + design.rem(12))
+    padding: design.rem(102) 0
+    text-align: center
+    font-size: design.rem(20)
+    font-weight: 800
+    transition: all .4s cubic-bezier(.4,0,.2,1)
+
+    > div
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      border-radius: design.rem(7)
+
+    &:not(.hanguk)
+      > div
+        &.sideA
+          background: linear-gradient(to right top, #6d327c, #485DA6, #00a1ba, #00BF98, #36C486)
+
+        &.sideB
+          opacity: 0
+          background: linear-gradient(to right top, #38438b, #944b94, #d75a88, #ff7e71, #ffb25f, #ffeb68)
+          animation: aside 2.7s infinite
+
+    p
+      position: relative
+      z-index: 7
+      color: design.$hex-white
+
+    a
+      color: design.$hex-white
+      text-decoration: underline
+
+.thumbnail
+  position: relative
+  overflow: hidden
+  border-radius: design.rem(3)
+
+  @include design.mq(minSmall)
+    border-radius: design.rem(7)
+
+  &.game
+    img
+      aspect-ratio: 460 / 215
+
+    dl
+      top: auto
+      right: design.rem(7)
+      bottom: design.rem(12)
+      left: auto
+      height: auto
+
+      div:last-of-type
+        display: flex
+
+        > dd
+          height: design.rem(24)
+
+          & + dt + dd
+            position: static
+            padding: 0 design.rem(7)
+
+            &:empty
+              display: none
+
+      i.supportLang
+        height: design.rem(24)
+        line-height: 1
+
+  &.square
+    position: relative
+
+    .dummy
+      position: absolute
+      top: 0
+      left: 0
+      z-index: 1
+      width: 100%
+      height: 100%
+      background-color: rgba(design.$hex-black, .7)
+      backdrop-filter: saturate(180%) blur(design.rem(70))
+
+      & + img
+        position: relative
+        top: 0
+        left: 0
+        z-index: 2
+        width: 100%
+        height: 100%
+        object-fit: contain
+
+    img
+      position: absolute
+      aspect-ratio: 1 / 1
+      object-position: 50% 50%
+      object-fit: cover
+
+    dl
+      z-index: 3
+
+  img
+    display: block
+    width: 100%
+    height: auto
+    aspect-ratio: 390 / 560
+    object-fit: cover
+    transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1) 0s
+
+  dl
+    position: absolute
+    top: 0
+    left: 0
+    display: flex
+    align-items: center
+    gap: design.rem(3)
+    width: 100%
+    height: 100%
+
+    dt
+      @include design.screen-reader-only
+
+    div
+      &.broadcast,
+      &.platform,
+      &.anime1,
+      &.anime2
+        position: absolute
+        top: 0
+
+        i
+          display: inline-block
+          border-radius: 0 0 0 design.rem(3)
+          width: design.rem(37)
+          height: design.rem(37)
+
+          @include design.mq(minSmall)
+            border-radius: 0 0 0 design.rem(7)
+            width: design.rem(43)
+            height: design.rem(43)
+
+      dd
+        span
+          @include design.screen-reader-only
+
+      &.broadcast, &.anime1
+        right: 0
+
+        &.broadcasts
+          right: design.rem(37)
+
+          @include design.mq(minSmall)
+            right: design.rem(43)
+
+          & + .platform
+            i
+              border-radius: 0
+
+      &.anime2
+        right: design.rem(37)
+
+        @include design.mq(minSmall)
+          right: design.rem(43)
+
+        & + .anime1 i
+          border-radius: 0
+
+        &.anime2only
+          right: 0
+
+      &.platform
+        right: 0
+
+      &:last-of-type
+        position: absolute
+        top: design.rem(7)
+        bottom: 0
+        left: design.rem(7)
+
+        dd
+          & + dt + dd
+            display: flex
+            gap: design.rem(3)
+            position: absolute
+            bottom: design.rem(7)
+            background-color: design.$hex-dark
+            border-radius: design.rem(3)
+            padding: design.rem(3) design.rem(7)
+
+            i
+              &::before
+                content: '|'
+                padding-right: design.rem(3)
+
+              &:first-of-type::before
+                content: ''
+
+          i
+            display: inline-flex
+            align-items: center
+            width: design.rem(24)
+            height: design.rem(24)
+            margin-left: design.rem(3)
+            padding: design.rem(6) 0 design.rem(10)
+            font-size: design.rem(12)
+            font-weight: 800
+            font-style: normal
+            line-height: 1
+            color: design.$hex-white
+
+            &.supportLang
+              margin: 0
+              padding: 0
+              width: auto
+
+            &.drama
+              background-color: #FFCB00
+              border-radius: design.rem(24)
+              padding: 0
+              color: design.$hex-black
+              justify-content: center
+
+              &.all
+                font-size: design.rem(10)
+
+              &.d19
+                background-color: #D61D28
+                color: design.$hex-white
+
+            &.rating-amazon
+              background-color: #33373d
+              border-radius: design.rem(3)
+              padding: design.rem(3) design.rem(7)
+              width: auto
+              height: auto
+              font-size: design.rem(12)
+              font-weight: 800
+              line-height: 1
+              color: design.$hex-white
+
+      &.game
+        top: auto
+        right: auto
+        bottom: design.rem(-7)
+        left: design.rem(7)
+
+.ai
+  margin-top: calc(env(safe-area-inset-top) + design.rem(114))
+
+  section
+    display: flex
+    flex-wrap: wrap
+    padding: design.rem(23) calc(env(safe-area-inset-right) + design.rem(12)) 0 calc(env(safe-area-inset-left) + design.rem(12))
+
+    @include design.mq(minMedium)
+      padding: design.rem(27) calc(env(safe-area-inset-right) + design.rem(12)) 0 calc(env(safe-area-inset-left) + design.rem(12))
+
+    .thumbnail
+      padding: design.rem(12)
+      width: 100%
+
+      @include design.mq(minSmall)
+        width: 50%
+
+      @include design.mq(minLarge)
+        width: 25%
+
+    a
+      display: block
+
+      img
+        aspect-ratio: 460 / 215
+        display: block
+        height: auto
+        object-fit: cover
+        transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1) 0s
+
+@keyframes  aside
+  0%
+    opacity: 0
+  50%
+    opacity: 1
+  100%
+    opacity: 0
+
+@keyframes loading
+  0%
+    background-position: 200% 0
+
+  100%
+    background-position: -200% 0

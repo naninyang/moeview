@@ -1,4 +1,4 @@
-export interface JejeupData {
+export interface MoeviewData {
   pageCount: number;
   id: string;
   idx: number;
@@ -15,7 +15,7 @@ export interface JejeupData {
   originalTitle: string;
   isPublish: boolean;
   isZip: boolean;
-  jejeups: {
+  moeviews: {
     id: string;
     idx: string;
     subject: string;
@@ -26,7 +26,7 @@ export interface JejeupData {
     worst: boolean;
     createdAt: string;
   };
-  jejeupMetaData: {
+  moeviewMetaData: {
     error: string;
     title: string;
     originalTitle: string;
@@ -71,7 +71,7 @@ export interface JejeupData {
   };
 }
 
-export interface JejeupMetaData {
+export interface MoeviewMetaData {
   error: string;
   title: string;
   originalTitle: string;
@@ -90,7 +90,7 @@ export interface JejeupMetaData {
   duration: string;
 }
 
-export interface JejeupPermalinkData {
+export interface MoeviewPermalinkData {
   amusementData: AmusementData[];
   attributes: {
     idx: string;
@@ -107,7 +107,7 @@ export interface JejeupPermalinkData {
     createdAt: string;
     publishedAt: string;
   };
-  jejeupMetaData: {
+  moeviewMetaData: {
     error: string;
     title: string;
     originalTitle: string;
@@ -127,8 +127,8 @@ export interface JejeupPermalinkData {
   };
 }
 
-export interface JejeupResponse {
-  data: JejeupPermalinkData;
+export interface MoeviewResponse {
+  data: MoeviewPermalinkData;
 }
 
 export interface ReviewData {
@@ -260,7 +260,7 @@ export interface AmusementPermalinkData {
   };
 }
 
-export interface JejeupAmusementData {
+export interface MoeviewAmusementData {
   data: {
     id: string;
     idx: string;

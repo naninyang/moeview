@@ -1,0 +1,1239 @@
+.amusement
+  display: flex
+  flex-direction: column
+  padding: 0 0 design.rem(57)
+  min-height: calc(100dvh - design.rem(78))
+  font-size: design.rem(16)
+
+  .loading
+    display: flex
+    justify-content: center
+    align-items: center
+    height: calc(100dvh - design.rem(133))
+    font-weight: 700
+    color: design.$hex-accent
+    text-align: center
+
+  &.error
+    min-height: 0
+
+  .top-link
+    button
+      span
+        color: design.$hex-white
+
+  .cover
+    display: flex
+    gap: design.rem(27)
+    position: relative
+    padding: calc(env(safe-area-inset-top) + design.rem(105)) calc(env(safe-area-inset-right) + design.rem(19)) design.rem(327) calc(env(safe-area-inset-left) + design.rem(19))
+
+    @include design.mq(maxSmall)
+      flex-direction: column-reverse
+      gap: design.rem(52)
+
+    @include design.mq(minMedium)
+      justify-content: space-between
+
+    @include design.mq(minLarge)
+      gap: design.rem(52)
+      padding: calc(env(safe-area-inset-top) + design.rem(130)) calc(env(safe-area-inset-right) + design.rem(52)) design.rem(327) calc(env(safe-area-inset-left) + design.rem(52))
+
+    @include design.mq(minExtraLarge)
+      gap: design.rem(102)
+      padding: calc(env(safe-area-inset-top) + design.rem(180)) calc(env(safe-area-inset-right) + design.rem(102)) design.rem(327) calc(env(safe-area-inset-left) + design.rem(102))
+
+    .background
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+
+      .images
+        position: relative
+        width: 100%
+        height: 100%
+
+      img
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        object-fit: cover
+        transition: all .5s cubic-bezier(.4,0,.2,1)
+
+        &.active
+          opacity: 1
+          z-index: 1
+
+        &:not(.active)
+          opacity: 0
+
+      .dummy
+        position: absolute
+        top: 0
+        left: 0
+        z-index: 2
+        width: 100%
+        height: 100%
+        background-color: rgba(design.$hex-black, .78)
+        backdrop-filter: saturate(180%) blur(design.rem(70))
+
+    .info, .poster
+      position: relative
+      z-index: 3
+
+    .info
+      display: flex
+      flex-direction: column
+      gap: design.rem(7)
+      @include design.col
+      width: 100%
+      color: design.$hex-light
+
+      .logoID
+        margin-bottom: design.rem(27)
+
+        img
+          object-fit: contain
+          object-position: 0 100%
+          aspect-ratio: auto
+          width: auto
+          max-width: 100%
+
+        &.default img
+          height: design.rem(75)
+
+          @include design.mq(minExtraLarge)
+            height: design.rem(100)
+
+        &.half img
+          height: design.rem(52)
+
+          @include design.mq(minExtraLarge)
+            height: design.rem(75)
+
+        &.double img
+          height: design.rem(150)
+
+        &:not(.game-title) + h1
+          @include design.screen-reader-only
+
+        &.game-title + h1
+          font-size: design.rem(24)
+
+      h1
+        font-size: design.rem(30)
+        font-weight: 800
+        color: design.$hex-azalea
+        line-height: 1.11458333
+
+        &.long
+          font-size: design.rem(20)
+
+        @include design.mq(minSmall)
+          font-size: design.rem(32)
+
+          &.long
+            font-size: design.rem(24)
+
+        @include design.mq(minMedium)
+          font-size: design.rem(48)
+
+          &.long
+            font-size: design.rem(30)
+
+        @include design.mq(minLarge)
+          font-size: design.rem(64)
+
+          &.long
+            font-size: design.rem(32)
+
+        @include design.mq(minExtraLarge)
+          font-size: design.rem(96)
+
+          &.long
+            font-size: design.rem(48)
+
+      .title, .summary, .platform
+        dt
+          @include design.screen-reader-only
+
+      .platform
+        dd
+          display: flex
+          align-items: center
+          gap: design.rem(7)
+          border: 0
+          padding-right: 0
+          padding-left: 0
+          font-weight: 800
+
+          cite
+            display: inline-flex
+            align-items: center
+            gap: design.rem(5)
+
+          i
+            display: inline-block
+            height: design.rem(18)
+
+      .function
+        display: flex
+        padding: design.rem(7) 0
+
+        > button
+          display: flex
+          flex-direction: column
+          justify-content: center
+          align-items: center
+          background-color: transparent
+
+          i
+            display: block
+            width: design.rem(51)
+            height: design.rem(51)
+
+          span
+            font-size: design.rem(16)
+            font-weight: 500
+            color: design.$hex-light
+            white-space: nowrap
+
+      .title
+        display: flex
+        flex-direction: column
+        gap: design.rem(5)
+        font-size: design.rem(14)
+        line-height: 1.5
+
+        @include design.mq(minMedium)
+          font-size: design.rem(20)
+
+        dd
+          font-weight: 800
+
+        .accent
+          color: design.$hex-azalea
+
+          @include design.mq(minMedium)
+            font-size: design.rem(16)
+
+          dd
+            font-weight: 400
+
+      .summary
+        display: flex
+        flex-direction: column
+        gap: design.rem(7)
+
+        &:not(:empty)
+          padding-right: design.rem(17)
+
+        .item
+          .category
+            dd
+              display: flex
+              gap: design.rem(7)
+
+              em
+                display: inline-flex
+                align-items: center
+                border: 1px solid design.$hex-white
+                border-radius: design.rem(3)
+                padding: design.rem(2) design.rem(7)
+                color: design.$hex-white
+                line-height: design.rem(23)
+
+                i
+                  display: inline-block
+                  margin-right: design.rem(5)
+                  height: design.rem(14)
+
+                  & ~ i
+                    margin-left: design.rem(5)
+
+                span
+                  @include design.screen-reader-only
+
+          .country, .release
+            dd
+              border: 1px solid design.$hex-white
+              border-radius: design.rem(3)
+              padding: design.rem(2) design.rem(7)
+              color: design.$hex-white
+              line-height: design.rem(23)
+
+          .sub-dub
+            display: flex
+            gap: design.rem(7)
+            border: 1px solid design.$hex-white
+            border-radius: design.rem(3)
+            padding: design.rem(2) design.rem(7)
+            color: design.$hex-white
+            line-height: design.rem(23)
+
+            dd
+              position: relative
+
+              & + dd::before
+                content: '· '
+                padding-right: design.rem(7)
+
+          .ad-cc
+            display: flex
+            gap: design.rem(12)
+            padding-right: design.rem(7)
+            padding-left: design.rem(7)
+
+            dd
+              position: relative
+
+              i
+                display: inline-block
+
+                & + span
+                  position: absolute
+                  transform: translateX(-50%)
+                  top: design.rem(37)
+                  left: 50%
+                  width: 0
+                  height: 0
+                  overflow: hidden
+
+                &:hover + span
+                  width: auto
+                  height: auto
+                  border-radius: design.rem(3)
+                  padding: design.rem(7) design.rem(12)
+                  background-color: design.$hex-light
+                  white-space: nowrap
+                  color: design.$hex-dark
+
+        .link
+          display: flex
+
+          &:not(.grow)
+            height: 100%
+
+          &.grow
+            width: 100%
+
+            dd
+              width: 100%
+
+            & + .internal dd
+              width: 100%
+
+          &.internal
+            dd
+              a
+                background-color: design.$hex-dark
+
+          dd
+            display: flex
+            border: 0
+            border-radius: 0
+            padding: 0
+
+            em
+              font-style: normal
+
+            strong.out, a
+              display: inline-flex
+              justify-content: center
+              align-items: center
+              gap: design.rem(12)
+              width: 100%
+              border: 0
+              border-radius: design.rem(3)
+              padding: design.rem(5) design.rem(52)
+              color: design.$hex-white
+              font-size: design.rem(20)
+              font-weight: 800
+
+              @include design.mq(maxExtraSmall)
+                padding: design.rem(5) design.rem(27)
+                font-size: design.rem(16)
+
+            strong.out
+              background-color: design.$hex-accent
+              cursor: not-allowed
+              user-select: none
+
+            a
+              background-color: design.$hex-azalea
+
+              @include design.mq(maxExtraSmall)
+                font-size: design.rem(16)
+
+              i
+                display: inline-flex
+                width: design.rem(20)
+                height: design.rem(20)
+
+                @include design.mq(maxExtraSmall)
+                  width: design.rem(16)
+                  height: design.rem(16)
+
+        .relation
+          height: 100%
+
+          dd
+            display: flex
+            gap: design.rem(7)
+            height: 100%
+
+            div
+              padding-left: 0
+              position: relative
+              width: 100%
+              height: 100%
+
+              select
+                position: absolute
+                top: 0
+                left: 0
+                z-index: 1
+                padding: design.rem(4) design.rem(27)
+                width: 100%
+                height: 100%
+                opacity: 0
+
+                @include design.mq(minSmall)
+                  padding: design.rem(4) design.rem(52)
+
+              > span
+                display: flex
+                position: relative
+                justify-content: space-between
+                align-items: center
+                gap: design.rem(7)
+                background-color: design.$hex-dark
+                border-radius: design.rem(3)
+                min-height: design.rem(38)
+                height: 100%
+                color: design.$hex-white
+                text-align: left
+                line-height: 1.25
+                font-weight: 800
+
+                em
+                  @include design.col
+                  padding: 0 design.rem(27)
+                  font-style: normal
+
+                  @include design.mq(minSmall)
+                    padding: 0 design.rem(27) 0 design.rem(52)
+
+                span
+                  display: flex
+                  align-items: center
+                  position: absolute
+                  top: 0
+                  left: 0
+                  padding: 0 design.rem(27)
+                  height: 100%
+
+                  @include design.mq(minSmall)
+                    padding: 0 design.rem(52)
+
+                  + em
+                    opacity: 0
+
+                i
+                  display: inline-block
+                  width: design.rem(24)
+                  height: design.rem(24)
+
+        button
+          background-color: design.$hex-white
+          flex-grow: 1
+          border: 0
+          border-radius: design.rem(3)
+          padding: design.rem(5) design.rem(27)
+          color: design.$hex-dark
+          font-weight: 800
+          line-height: 1
+
+          @include design.mq(maxExtraSmall)
+            font-size: design.rem(14)
+
+          @include design.mq(minSmall)
+            padding: design.rem(5) design.rem(52)
+
+        .item
+          display: flex
+          flex-wrap: wrap
+          align-items: center
+          gap: design.rem(7)
+
+          dd
+            display: flex
+            align-items: center
+
+            @include design.mq(maxExtraSmall)
+              font-size: design.rem(14)
+
+            em
+              font-style: normal
+
+          .rating
+            dd
+              display: flex
+              align-items: center
+              gap: design.rem(7)
+              border: 0
+              padding: 0
+
+              > i
+                display: inline-flex
+                align-items: center
+                width: design.rem(30)
+                height: design.rem(30)
+                padding: design.rem(6) 0 design.rem(10)
+                font-size: design.rem(16)
+                font-weight: 800
+                font-style: normal
+                line-height: 1
+                color: design.$hex-white
+
+                @include design.mq(maxExtraSmall)
+                  width: design.rem(28)
+                  height: design.rem(28)
+
+                &.drama
+                  justify-content: center
+                  background-color: #FFCB00
+                  border-radius: design.rem(24)
+                  padding: 0
+                  color: design.$hex-black
+
+                  &.all
+                    font-size: design.rem(10)
+
+                    @include design.mq(minSmall)
+                      font-size: design.rem(12)
+
+                  &.d19
+                    background-color: #D61D28
+                    color: design.$hex-white
+
+                &.rating-amazon
+                  @include design.col
+                  background-color: #33373d
+                  border-radius: design.rem(3)
+                  padding: design.rem(3) design.rem(7)
+                  width: auto
+                  height: auto
+                  font-size: design.rem(16)
+                  font-weight: 800
+                  line-height: 1
+                  color: design.$hex-white
+
+              span
+                @include design.screen-reader-only
+
+              .custom
+                position: relative
+                display: inline-block
+                width: design.rem(20)
+                height: design.rem(20)
+
+                button
+                  position: absolute
+                  top: 0
+                  left: 0
+                  display: inline-block
+                  background-color: white
+                  border: design.rem(2) solid design.$hex-accent
+                  border-radius: 100%
+                  padding: 0
+                  width: design.rem(20)
+                  height: design.rem(20)
+                  text-align: center
+
+                  i::before
+                    content: '?'
+                    position: absolute
+                    top: 50%
+                    left: 50%
+                    transform: translate(-50%, -50%)
+                    font-size: design.rem(14)
+                    font-weight: 800
+                    font-style: normal
+                    color: design.$hex-accent
+                    line-height: 1
+
+      .staff
+        display: flex
+        flex-direction: column
+        gap: design.rem(7)
+        padding-top: design.rem(16)
+
+        @include design.mq(minSmall)
+          gap: design.rem(12)
+          padding-top: design.rem(27)
+
+        div
+          display: flex
+
+          dt, dd
+            font-size: design.rem(16)
+            line-height: 1.5
+
+            @include design.mq(maxExtraSmall)
+              font-size: design.rem(14)
+
+            @include design.mq(minLarge)
+              font-size: design.rem(20)
+
+          dt
+            width: design.rem(82)
+
+            @include design.mq(minLarge)
+              width: design.rem(112)
+
+          dd
+            @include design.col
+            text-wrap: balance
+            font-variation-settings: 'opsz' 700, 'wght' 700
+
+          &.synopsys, &.comment
+            dt
+              @include design.screen-reader-only
+
+            dd
+              padding-top: design.rem(7)
+
+          &.synopsys
+            dd
+              @include design.line-abbr(2, 67, 1.5)
+              font-weight: 400
+              font-variation-settings: 'opsz' 400, 'wght' 400
+              text-wrap: balance
+              word-break: keep-all
+
+          &.comment
+            dd
+              font-weight: 800
+              color: design.$hex-azalea
+
+      .more
+        font-size: design.rem(16)
+
+        button
+          background-color: transparent
+          color: design.$hex-white
+          font-weight: 800
+
+      .channel
+        font-size: design.rem(20)
+        color: design.$hex-white
+
+        a
+          color: design.$hex-azalea
+          text-decoration: underline
+
+    .poster
+      text-align: center
+
+      &.poster-game
+        @include design.mq(minMedium)
+          width: design.rem(270)
+
+        @include design.mq(minLarge)
+          width: design.rem(407)
+
+        .images, img
+          aspect-ratio: 460 / 215
+
+        .images
+          @include design.mq(maxSmall)
+            width: 52%
+
+          @include design.mq(maxExtraSmall)
+            width: 92%
+
+      @include design.mq(minMedium)
+        width: design.rem(257)
+
+      @include design.mq(minExtraLarge)
+        width: design.rem(370)
+
+      @include design.mq(maxSmall)
+        width: 100%
+
+      .images
+        aspect-ratio: 390 / 560
+        position: relative
+
+        @include design.mq(maxSmall)
+          margin: 0 auto
+          width: 52%
+
+        @include design.mq(maxExtraSmall)
+          width: 92%
+
+      img
+        position: absolute
+        top: 0
+        left: 0
+        display: block
+        width: 100%
+        height: auto
+        aspect-ratio: 390 / 560
+        object-fit: cover
+        transition: transform .5s cubic-bezier(.4,0,.2,1)
+        box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px
+
+        &.active
+          z-index: 1
+
+        &:not(.active)
+          transform: perspective(600px) rotateY(-180deg)
+
+      &.mv
+        width: design.rem(407)
+
+        .images
+          aspect-ratio: 1920 / 1080
+
+      &:not(.mv)
+        button
+          position: relative
+          display: inline-flex
+          gap: design.rem(7)
+          background-color: transparent
+          margin-top: design.rem(17)
+          border: 1px solid design.$hex-white
+          border-radius: design.rem(38)
+          padding: design.rem(7) design.rem(23)
+          font-size: design.rem(20)
+          color: design.$hex-white
+
+          span
+            @include design.screen-reader-only
+
+          svg
+            width: design.rem(20)
+            height: design.rem(20)
+
+  section
+    transition: all .4s cubic-bezier(.4,0,.2,1)
+    background-color: design.$hex-black
+    position: relative
+    padding: design.rem(27) calc(env(safe-area-inset-right) + design.rem(12)) calc(env(safe-area-inset-left) + design.rem(12))
+
+    &:first-of-type
+      margin-top: design.rem(-257)
+      padding: 0 calc(env(safe-area-inset-right) + design.rem(12)) calc(env(safe-area-inset-left) + design.rem(12))
+
+      &::before
+        content: ''
+        display: block
+        position: absolute
+        top: 1px
+        left: 0
+        z-index: 2
+        width: 100%
+        height: design.rem(257)
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, #000 100%)
+
+    &.not
+      display: flex
+      justify-content: center
+      flex-direction: column
+      flex-grow: 1
+      width: 100%
+      height: design.rem(257)
+
+    .amusement-loading, .amusement-error
+      display: flex
+      justify-content: center
+      align-items: center
+      position: relative
+      z-index: 7
+      width: 100%
+      padding-top: design.rem(27)
+      font-weight: 700
+      color: design.$hex-azalea
+      text-align: center
+
+      p
+        position: relative
+        z-index: 7
+
+    .amusement-error
+      gap: design.rem(15)
+
+      a
+        text-decoration: underline
+        color: design.$hex-azalea
+        font-weight: 800
+
+    .barrier-free
+      position: relative
+      z-index: 7
+      padding: 0 design.rem(7) design.rem(17)
+
+      @include design.mq(minLarge)
+        padding: 0 design.rem(40) design.rem(17)
+
+      @include design.mq(minExtraLarge)
+        padding: 0 design.rem(90) design.rem(17)
+
+      dl
+        display: flex
+        flex-direction: column
+        gap: design.rem(12)
+
+        div
+          display: flex
+          gap: design.rem(12)
+
+        dt
+          display: flex
+          width: design.rem(129)
+          justify-content: center
+
+          i
+            display: inline-flex
+            height: design.rem(23)
+
+          span
+            @include design.screen-reader-only
+
+        dd
+          &:nth-of-type(2)
+            display: flex
+            flex-direction: column
+
+            &::before
+              content: ''
+              display: inline-flex
+              margin-right: design.rem(12)
+              width: design.rem(2)
+              height: 100%
+              background-color: design.$hex-white
+
+          > a
+            position: relative
+            display: inline-flex
+            gap: design.rem(12)
+            opacity: .7
+            transition: opacity .4s cubic-bezier(.4,0,.2,1)
+
+            &:hover, &:focus
+              opacity: 1
+
+              span
+                width: auto
+                height: auto
+                border-radius: design.rem(3)
+                padding: design.rem(7) design.rem(12)
+                background-color: design.$hex-light
+                white-space: nowrap
+                color: design.$hex-dark
+
+            i
+              display: inline-flex
+
+            span
+              position: absolute
+              transform: translateX(-50%)
+              z-index: 1
+              top: design.rem(37)
+              left: 50%
+              width: 0
+              height: 0
+              overflow: hidden
+
+          p
+            padding: design.rem(5) 0
+            color: design.$hex-azalea
+
+          ul
+            display: flex
+            gap: design.rem(12)
+
+            li
+              display: flex
+              align-items: center
+              gap: design.rem(5)
+
+              &::before
+                content: ''
+                display: inline-block
+                background-color: design.$hex-azalea
+                border-radius: 100%
+                width: design.rem(4)
+                height: design.rem(4)
+
+              a
+                color: design.$hex-azalea
+                text-decoration: underline
+                font-weight: 800
+
+    .related-list
+      &.list
+        > div
+          @include design.mq(minSmall)
+            width: 50%
+
+          @include design.mq(minLarge)
+            width: 33.33%
+
+          @include design.mq(minExtraLarge)
+            width: 25%
+
+      &:not(.list)
+        position: relative
+        z-index: 7
+
+        @include design.mq(maxExtraSmall)
+          > div > div > div > div > div
+            width: design.rem(320)
+
+        &.short-view > div:not(.dummy) > div
+          padding: 0 design.rem(35)
+
+        > div > div > div
+          margin: 0
+
+        .dummy
+          position: absolute
+          top: 0
+          bottom: 0
+          width: design.rem(35)
+
+          &.left
+            left: 0
+            border-radius: 0 design.rem(7) design.rem(7) 0
+            background: linear-gradient(90deg, rgba(design.$hex-black, 1) 0%, rgba(design.$hex-black, 0) 100%)
+
+          &.right
+            right: 0
+            border-radius: design.rem(7) 0 0 design.rem(7)
+            background: linear-gradient(-90deg, rgba(design.$hex-black, 1) 0%, rgba(design.$hex-black, 0) 100%)
+
+        .move
+          position: absolute
+          top: 0
+          bottom: 0
+          width: design.rem(52)
+
+          svg
+            width: design.rem(25)
+            height: design.rem(25)
+
+          span
+            @include design.screen-reader-only
+
+          &.prev
+            left: 0
+            background: linear-gradient(90deg, rgba(design.$hex-black, 1) 0%, rgba(design.$hex-black, 0) 100%)
+
+          &.next
+            right: 0
+            background: linear-gradient(-90deg, rgba(design.$hex-black, 1) 0%, rgba(design.$hex-black, 0) 100%)
+
+      span
+        strong
+          @include design.screen-reader-only
+
+    .warning, .item
+      display: flex
+      position: relative
+      z-index: 7
+
+    .warning
+      display: flex
+      justify-content: center
+      align-items: center
+      flex-direction: column
+      gap: design.rem(7)
+      width: 100%
+      height: design.rem(270)
+
+      p
+        text-align: center
+        font-weight: 800
+        line-height: 1.25
+        color: design.$hex-white
+
+        button
+          background-color: transparent
+          border: 0
+          padding: 0
+          color: yellow
+          font-weight: 800
+          text-decoration: underline
+
+    h2
+      position: relative
+      z-index: 7
+      padding: 0 design.rem(7) design.rem(17)
+      font-size: design.rem(20)
+      font-weight: 800
+      color: design.$hex-azalea
+
+      @include design.mq(minLarge)
+        padding: 0 design.rem(40) design.rem(17)
+        font-size: design.rem(24)
+
+      @include design.mq(minExtraLarge)
+        padding: 0 design.rem(90) design.rem(17)
+
+    .list
+      display: flex
+
+      @include design.mq(maxExtraSmall)
+        flex-direction: column
+
+      @include design.mq(minSmall)
+        flex-wrap: wrap
+
+      .item
+        padding: 0 design.rem(7) design.rem(37)
+
+        @include design.mq(minSmall)
+          width: 50%
+
+        @include design.mq(minLarge)
+          width: 33.33%
+
+        @include design.mq(minExtraLarge)
+          width: 25%
+
+        a
+          display: block
+          width: 100%
+
+        .metaloading
+          display: flex
+          justify-content: center
+          align-items: center
+          width: 100%
+          padding: design.rem(15) design.rem(15) 0
+          aspect-ratio: 1920 / 1080
+          font-weight: 800
+          color: design.$hex-accent
+
+        .preview
+          position: relative
+
+          a
+            transition: all .4s cubic-bezier(.4,0,.2,1)
+            display: flex
+            flex-direction: column
+            overflow: hidden
+            width: 100%
+
+          &.mini
+            padding-bottom: design.rem(12)
+            border-bottom: 1px solid rgba(design.$hex-light, .27)
+
+          &.preview-dummy
+            transition: all .4s cubic-bezier(.4,0,.2,1)
+            display: flex
+            flex-direction: column
+            overflow: hidden
+            width: 100%
+
+            .skeleton
+              background: linear-gradient(90deg, #111111 25%, #222222 50%, #111111 75%)
+              background-size: 200% 100%
+              animation: loading 1.5s infinite
+
+            .notice
+              position: absolute
+              top: 0
+              left: 0
+              z-index: 1
+              display: flex
+              flex-direction: column
+              justify-content: center
+              align-items: center
+              width: 100%
+              height: 100%
+
+              &[hidden]
+                @include design.screen-reader-only
+
+              p
+                text-align: center
+                line-height: 1.25
+                color: design.$hex-white
+
+                button
+                  background-color: transparent
+                  border: 0
+                  padding: 0
+                  color: design.$hex-accent
+                  font-weight: 800
+                  text-decoration: underline
+
+          .preview-mini, .preview-container
+            display: flex
+            flex-direction: column
+            gap: design.rem(12)
+
+            .thumbnail
+              position: relative
+              aspect-ratio: 1920 / 1080
+
+              img
+                display: block
+                border-radius: design.rem(7)
+                aspect-ratio: 1920 / 1080
+                object-fit: cover
+                width: 100%!important
+                height: auto!important
+
+              span
+                position: absolute
+                left: design.rem(4)
+                top: design.rem(4)
+                background-color: design.$hex-azalea
+                border-radius: design.rem(4)
+                padding: design.rem(5) design.rem(7)
+                font-size: design.rem(14)
+                font-weight: 800
+                color: design.$hex-black
+                line-height: 1
+
+            .option
+              display: flex
+              gap: design.rem(12)
+
+              strong
+                display: inline-flex
+                background-color: design.$hex-accent
+                border-radius: design.rem(3)
+                padding: design.rem(3) design.rem(5)
+                font-size: design.rem(12)
+                font-weight: 800
+                text-transform: uppercase
+                color: design.$hex-white
+
+          .preview-mini
+            .preview-info
+              display: flex
+              gap: design.rem(12)
+
+              .thumbnail
+                width: 37%
+
+              .user-info
+                display: flex
+                flex-direction: column
+                justify-content: center
+                @include design.col
+
+                cite, time, em
+                  font-style: normal
+                  color: design.$hex-light
+
+                cite
+                  font-size: design.rem(14)
+                  font-weight: 800
+
+                time, em
+                  font-size: design.rem(12)
+
+            .preview-subject
+              strong
+                font-size: design.rem(14)
+                color: design.$hex-white
+
+          .preview-container
+            .thumbnail
+              em
+                position: absolute
+                right: design.rem(4)
+                bottom: design.rem(4)
+                background-color: design.$hex-black
+                border-radius: design.rem(4)
+                padding: design.rem(3) design.rem(4)
+                font-size: design.rem(12)
+                font-weight: 700
+                font-style: normal
+                color: design.$hex-white
+                line-height: 1
+
+              .dummy
+                aspect-ratio: 1920 / 1080
+
+            .preview-info
+              display: flex
+              flex-direction: column
+
+              .detail
+                display: flex
+                gap: design.rem(7)
+
+                img
+                  border-radius: 100%
+                  width: design.rem(36)
+                  height: design.rem(36)
+
+              .user-info
+                display: flex
+                flex-direction: column
+                gap: design.rem(4)
+                color: design.$hex-light
+
+                .user
+                  font-size: design.rem(14)
+                  font-weight: 400
+                  line-height: 1.175
+
+                > strong
+                  width: 100%
+                  height: design.rem(18)
+
+                strong
+                  @include design.line-abbr(1, 36, 18px)
+                  font-size: design.rem(14)
+                  font-weight: 700
+                  color: design.$hex-light
+
+                cite, time
+                  height: design.rem(16)
+                  font-size: design.rem(14)
+                  color: design.$hex-light
+                  vertical-align: top
+
+                cite
+                  > i, &::after
+                    display: inline-block
+
+                  i
+                    width: design.rem(72)
+                    height: design.rem(16)
+
+                  &::after
+                    content: '•'
+                    padding: 0 design.rem(4)
+                    font-size: design.rem(14)
+                    color: design.$hex-light
+
+                time
+                  width: design.rem(160)
+
+.open
+  .amusement
+    section
+      h2, .item
+        position: static
+        z-index: -1
+
+@keyframes loading
+  0%
+    background-position: 200% 0
+
+  100%
+    background-position: -200% 0

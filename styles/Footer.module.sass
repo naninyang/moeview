@@ -1,0 +1,113 @@
+main.amusement,
+main.recommend,
+main.open
+  & + footer.footer
+    background-color: design.$hex-dark
+    color: design.$hex-light
+
+    .content
+      dl
+        > div
+          > div
+            dd
+              a
+                color: design.$hex-light
+
+footer.footer
+  background-color: design.$hex-light
+  width: 100%
+  padding: design.rem(72) calc(env(safe-area-inset-right) + design.rem(19)) calc(env(safe-area-inset-bottom) + design.rem(23)) calc(env(safe-area-inset-left) + design.rem(19))
+
+  .container
+    display: flex
+    flex-direction: column
+    gap: design.rem(27)
+    width: 100%
+    font-size: design.rem(14)
+
+    @include design.mq(minSmall)
+      position: relative
+      gap: design.rem(52)
+
+    .site
+      display: flex
+      gap: design.rem(12)
+
+      @include design.mq(maxExtraSmall)
+        padding-bottom: design.rem(12)
+
+      @include design.mq(minSmall)
+        position: absolute
+        right: 0
+        bottom: 0
+
+      a
+        i
+          display: inline-block
+          width: design.rem(20)
+          height: design.rem(20)
+
+        span
+          @include design.screen-reader-only
+
+    .content
+      max-width: design.rem(770)
+
+      dl
+        display: flex
+        gap: design.rem(12)
+
+        @include design.mq(maxExtraSmall)
+          flex-direction: column
+          gap: design.rem(52)
+
+        div
+          display: flex
+          flex-direction: column
+
+        > div
+          gap: design.rem(17)
+          @include design.col
+
+          @include design.mq(maxExtraSmall)
+            &:last-of-type
+              div
+                flex-direction: row
+
+                dd
+                  &::before
+                    content: '/'
+                    padding: 0 design.rem(7)
+                    opacity: .5
+
+                  &:first-of-type::before
+                    display: none
+
+          dt
+            font-size: design.rem(16)
+            font-weight: 800
+
+          > div
+            gap: design.rem(3)
+
+            dd
+              font-size: design.rem(14)
+
+              a
+                color: design.$hex-dark
+
+                &:hover, &:focus
+                  text-decoration: underline
+
+    .studio
+      padding-top: design.rem(12)
+      font-size: design.rem(12)
+      font-weight: 400
+
+      strong
+        @include design.screen-reader-only
+
+      i
+        display: inline-block
+        aspect-ratio: 385 / 50
+        height: design.rem(14)

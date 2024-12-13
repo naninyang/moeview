@@ -1,0 +1,59 @@
+.pagination
+  display: flex
+  justify-content: flex-end
+  gap: design.rem(7)
+  padding: design.rem(27) design.rem(12) 0
+
+  @include design.mq(minSmall)
+    justify-content: center
+    padding: design.rem(27) 0 0
+    width: 100%
+
+  .pager, .pages
+    a
+      display: inline-flex
+      justify-content: center
+      align-items: center
+      width: design.rem(30)
+      height: design.rem(30)
+
+  .pager
+    & ~ .pager
+      a
+        svg
+          transform: translateX(design.rem(-5))
+
+    &.pagerNext
+      a
+        svg
+          transform: translateX(design.rem(-5))
+
+    a
+      span
+        @include design.screen-reader-only
+
+      svg
+        transform: translateX(design.rem(5))
+        transition: transform .4s cubic-bezier(.4,0,.2,1)
+
+      &:hover, &:focus
+        svg
+          transform: translateX(0)
+
+  .pages
+    &.current
+      a
+        border: 1px solid design.$hex-accent
+        background-color: design.$hex-accent
+        color: design.$hex-white
+        font-weight: 900
+
+    &.many
+      a
+        font-size: design.rem(10)
+
+    a
+      border: 1px solid design.$hex-black
+      border-radius: design.rem(3)
+      font-size: design.rem(12)
+      color: design.$hex-black

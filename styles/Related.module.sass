@@ -1,0 +1,132 @@
+.dialog
+  position: fixed
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  top: 0
+  left: 0
+  z-index: 9999
+  border: 0
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)
+  width: 100%
+  height: 100%
+  background-color: rgba(design.$hex-white, .5)
+  backdrop-filter: blur(design.rem(20))
+
+  &.dialog-amusement
+    background-color: rgba(design.$hex-black, .5)
+
+    .container
+      h3
+        color: design.$hex-white
+
+        span
+          color: design.$hex-azalea
+
+  @include design.mq(minMedium)
+    padding: design.rem(52)
+
+  .container
+    width: 80%
+    max-height: 80%
+    position: relative
+
+    > button
+      position: absolute
+      top: 0
+      right: 0
+      width: design.rem(20)
+      height: design.rem(20)
+      background-color: transparent
+
+      @include design.mq(minLarge)
+        width: design.rem(36)
+        height: design.rem(36)
+
+      i
+        display: inline-block
+        width: design.rem(20)
+        height: design.rem(20)
+
+        @include design.mq(minLarge)
+          width: design.rem(36)
+          height: design.rem(36)
+
+      span
+        @include design.screen-reader-only
+
+    h3
+      padding-right: design.rem(40)
+      padding-bottom: design.rem(12)
+      font-size: design.rem(20)
+      font-weight: 800
+      line-height: 1.16666667
+      color: design.$hex-black
+
+      @include design.mq(minLarge)
+        padding-right: design.rem(100)
+        padding-bottom: design.rem(27)
+        font-size: design.rem(36)
+
+      span
+        color: design.$hex-dark
+
+    > div
+      max-height: 100%
+      margin: 0 auto
+
+.item
+  display: flex
+
+  &.item-amusement
+    position: relative
+    z-index: 7
+    padding: 0 design.rem(7) design.rem(23)
+    width: 100%
+
+    button,
+    .item
+      span
+        color: design.$hex-white
+
+  &:not(.item-amusement)
+    padding: 0 design.rem(7) design.rem(27)
+
+    button,
+    .item
+      span
+        font-weight: 700
+        line-height: 1.27
+
+  button,
+  .item
+    display: flex
+    flex-direction: column
+    gap: design.rem(8)
+    width: 100%
+    background-color: transparent
+    padding: 0
+    text-align: left
+
+    img
+      aspect-ratio: 1920 / 1080
+      object-fit: cover
+      border-radius: design.rem(7)
+      width: 100%
+      height: auto
+
+    span
+      color: design.$hex-black
+      font-size: design.rem(14)
+      font-weight: 700
+      line-height: 1.42857143
+
+.open
+  .item
+    position: static
+    z-index: -1
+
+    &.current
+      position: relative
+      z-index: 7

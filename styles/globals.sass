@@ -1,0 +1,267 @@
+*, ::before, ::after
+  box-sizing: border-box
+
+\::selection
+  background-color: design.$hex-azalea
+  color: design.$hex-white
+
+html
+  font-size: 16px
+
+body
+  margin: 0
+  font-size: 16px
+  word-break: keep-all
+  -webkit-text-size-adjust: none
+  transition: all .4s cubic-bezier(.4,0,.2,1)
+
+body, pre, input, button, textarea, select
+  font-size: 1rem
+  font-weight: 400
+  font-optical-sizing: auto
+  font-feature-settings: normal
+  font-stretch: 100%
+  text-size-adjust: 100%
+  text-rendering: optimizeLegibility
+  -webkit-font-smoothing: antialiased
+
+body
+  background-color: design.$hex-white
+
+h1, h2, h3, h4, h5, h6
+  margin-top: 0
+  margin-bottom: 0
+
+img
+  @include design.image-rendering
+  user-drag: none
+
+a
+  text-decoration: none
+  -webkit-tap-highlight-color: rgba(255,255,255,.10)
+
+fieldset
+  margin: 0
+  padding: 0
+
+legend
+  position: absolute
+  overflow: hidden
+  margin: 0
+  width: 1px
+  height: 1px
+  clip: rect(1px, 1px, 1px, 1px)
+
+label
+  cursor: pointer
+
+img, fieldset
+  border: 0
+
+p, ul, dl, pre
+  margin-top: 0
+  margin-bottom: 0
+
+ul, ol
+  margin-top: 0
+  margin-bottom: 0
+  padding-left: 0
+  list-style-type: none
+
+dd
+  margin-left: 0
+
+button
+  cursor: pointer
+  border: 0
+  padding: 0
+
+figure
+  margin: 0
+
+address, cite
+  font-style: normal
+
+iframe
+  display: block
+
+a, button, select, input
+  user-select: none
+
+main
+  margin-top: calc(env(safe-area-inset-top) + design.rem(78))
+
+.top-link
+  position: fixed
+  top: calc(env(safe-area-inset-top) + design.rem(23))
+  left: calc(env(safe-area-inset-left) + design.rem(17))
+  z-index: 1050
+
+  a, button
+    background-color: transparent
+    transition: border .4s cubic-bezier(.4,0,.2,1)
+    display: inline-flex
+    align-items: center
+    gap: design.rem(5)
+    padding: 0 design.rem(5)
+    height: design.rem(23)
+
+    @include design.mq(minSmall)
+      height: design.rem(32)
+
+    i
+      transition: transform .4s cubic-bezier(.4,0,.2,1)
+      width: design.rem(23)
+      height: design.rem(23)
+
+      @include design.mq(minSmall)
+        width: design.rem(32)
+        height: design.rem(32)
+
+    span
+      transition: color .4s cubic-bezier(.4,0,.2,1)
+      font-size: design.rem(20)
+      font-weight: 700
+      line-height: 1
+      color: design.$hex-dark
+
+      @include design.mq(maxExtraSmall)
+        @include design.screen-reader-only
+
+    &:hover, &:focus
+      i
+        transform: translateX(design.rem(-5))
+
+      span
+        color: design.$hex-black
+
+.scrollbar-container
+  position: relative
+  height: 100%
+
+.headline
+  display: flex
+  justify-content: flex-start
+  background-color: design.$hex-dark
+  padding: design.rem(37) calc(env(safe-area-inset-right) + design.rem(12)) design.rem(17) calc(env(safe-area-inset-left) + design.rem(12))
+
+  @include design.mq(maxSmall)
+    flex-direction: column
+    align-items: flex-start
+    gap: design.rem(27)
+
+  @include design.mq(minMedium)
+    justify-content: space-between
+    align-items: flex-end
+    padding: design.rem(52) calc(env(safe-area-inset-right) + design.rem(12)) design.rem(27) calc(env(safe-area-inset-left) + design.rem(12))
+
+  &.without-select
+    flex-direction: column
+    align-items: flex-start
+    gap: design.rem(12)
+
+    p
+      color: design.$hex-light
+
+  h1, h2
+    font-size: design.rem(20)
+    font-weight: 800
+
+    @include design.mq(minMedium)
+      font-size: design.rem(24)
+
+  h1
+    em, span
+      vertical-align: sub
+      line-height: 1.25
+
+    em
+      font-size: design.rem(32)
+      font-style: normal
+      color: design.$hex-light
+
+    span
+      padding-left: design.rem(12)
+      font-size: design.rem(14)
+      font-weight: 800
+      color: design.$hex-azalea
+      white-space: nowrap
+
+      @include design.mq(minMedium)
+        font-size: design.rem(16)
+
+    strong
+      display: block
+      margin-top: design.rem(7)
+      font-size: design.rem(16)
+      font-weight: 800
+      color: design.$hex-white
+
+  h2
+    a
+      color: design.$hex-dark
+      line-height: 1.42857143
+
+      &:hover, &:focus
+        color: design.$hex-accent
+
+      span
+        white-space: nowrap
+
+  .select
+    display: flex
+    gap: design.rem(7)
+
+    select, button
+      background-color: design.$hex-white
+      border: 1px solid rgba(design.$hex-black, .7)
+      border-radius: design.rem(3)
+      padding: design.rem(3) design.rem(7)
+      font-weight: 800
+
+      @include design.mq(maxSmall)
+        font-size: design.rem(14)
+
+  > a
+    display: inline-flex
+    align-items: center
+    font-weight: 800
+    color: design.$hex-dark
+
+    @include design.mq(maxSmall)
+      font-size: design.rem(14)
+
+    &:hover, &:focus
+      span
+        border-bottom: 0
+        color: design.$hex-accent
+        border-bottom: design.rem(2) solid design.$hex-accent
+
+      svg
+        path
+          fill: design.$hex-accent
+
+    svg
+      display: inline-block
+      width: design.rem(24)
+      height: design.rem(24)
+
+    @include design.mq(maxSmall)
+      span
+        @include design.screen-reader-only
+
+.home-banner
+  .slick-slider
+    .slick-track
+      > div > div, > div > div > div, > div > div > div a
+        aspect-ratio: 590 / 650
+
+        @include design.mq(minSmall)
+          aspect-ratio: 1180 / 650
+
+      .slick-slide
+        width: 100%
+
+        @include design.mq(minSmall)
+          padding: 0 design.rem(12)
+          width: 72%

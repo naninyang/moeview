@@ -1,0 +1,312 @@
+.notice
+  display: flex
+  justify-content: center
+  gap: rem(25)
+  padding: rem(27) calc(env(safe-area-inset-right) + rem(15)) rem(72) calc(env(safe-area-inset-left) + rem(15))
+
+  +mq(minLarge)
+    padding: rem(57) calc(env(safe-area-inset-right) + rem(25)) rem(102) calc(env(safe-area-inset-left) + rem(25))
+
+  .content
+    max-width: rem(720)
+    width: 100%
+
+    h1
+      display: flex
+      align-items: flex-end
+      justify-content: center
+      gap: rem(7)
+      font-size: rem(24)
+      font-weight: 900
+      color: $hex-azalea
+
+      +mq(minSmall)
+        font-size: rem(52)
+
+      em
+        font-size: rem(16)
+        font-weight: 300
+        font-style: normal
+
+        +mq(minSmall)
+          font-size: rem(36)
+
+    .summary
+      display: flex
+      flex-direction: column
+      gap: rem(12)
+      margin: rem(17)
+
+      +mq(minSmall)
+        gap: rem(7)
+        margin: rem(52)
+
+      p
+        display: flex
+        flex-direction: column
+        font-size: rem(16)
+        line-height: 1.3
+        text-align: center
+
+        +mq(minSmall)
+          font-size: rem(20)
+
+      .button-group
+        display: flex
+        justify-content: center
+        align-items: center
+        margin: rem(32) 0
+        gap: rem(12)
+        text-align: center
+
+        +mq(minSmall)
+          flex-direction: row
+          margin: rem(52) 0 rem(32)
+
+        a, button
+          display: inline-flex
+          background-color: transparent
+          width: rem(170)
+          justify-content: center
+          border: rem(1) solid $hex-accent
+          border-radius: rem(3)
+          padding: rem(12) rem(32)
+          font-size: rem(16)
+          font-weight: 700
+          line-height: 1
+          color: $hex-accent
+          transition: all .3s cubic-bezier(.4,0,.2,1)
+
+          +mq(minSmall)
+            width: auto
+            padding: rem(17) rem(52)
+            font-size: rem(20)
+
+          &:hover, &:focus
+            background-color: $hex-accent
+            color: $hex-light
+
+    ul
+      li
+        border-top: 1px solid rgba($hex-dark, .2)
+
+        &:first-of-type
+          border-top: 0
+
+        a
+          display: flex
+          justify-content: space-between
+          align-items: center
+          gap: rem(23)
+          padding: rem(7) 0
+
+          strong
+            position: relative
+
+            &::before
+              content: ''
+              display: block
+              position: absolute
+              top: 0
+              left: 0
+              width: 0
+              height: 100%
+              border-radius: rem(7)
+              background-color: $hex-white
+              transition: all .4s cubic-bezier(.4,0,.2,1)
+
+            span
+              display: inline-flex
+              position: relative
+              padding: rem(7) rem(17)
+              font-size: rem(16)
+              color: $hex-dark
+              transition: all .4s cubic-bezier(.4,0,.2,1)
+
+              +mq(maxExtraSmall)
+                font-size: rem(14)
+
+          &:focus, &:hover
+            strong
+              &::before
+                background-color: $hex-accent
+                width: 100%
+
+              span
+                color: $hex-white
+
+          time
+            padding-right: rem(17)
+            font-size: rem(14)
+            white-space: nowrap
+            color: $hex-dark
+
+            +mq(maxExtraSmall)
+              font-size: rem(12)
+
+    fieldset
+      display: flex
+      flex-direction: column
+      gap: rem(15)
+
+    .field-group
+      display: flex
+      flex-direction: column
+      gap: rem(5)
+
+    label
+      font-size: rem(14)
+      line-height: 1.57142857
+
+    textarea
+      height: rem(270)
+
+    input, textarea
+      transition: all .7s cubic-bezier(.4,0,.2,1)
+      background-color: $hex-white
+      outline: 1px solid rgba($hex-dark, .2)
+      border: 0
+      border-radius: rem(3)
+      padding: rem(10)
+      font-size: rem(14)
+      color: $hex-dark
+
+      &:focus-within, &:focus, &:hover
+        outline: 1px solid $hex-accent
+
+    .button-group
+      display: flex
+      flex-direction: column
+      gap: rem(7)
+
+      +mq(minSmall)
+        gap: rem(2)
+
+    button[type="submit"]
+      transition: all .4s cubic-bezier(.4,0,.2,1)
+      background: transparent
+      border: 1px solid $hex-accent
+      border-radius: rem(5)
+      padding: rem(15)
+      font-size: rem(20)
+      font-weight: 900
+      color: $hex-accent
+
+      &:focus, &:hover
+        background: $hex-accent
+        color: $hex-white
+
+    .cancel
+      text-align: right
+
+      button
+        background-color: transparent
+        transition: border .4s cubic-bezier(.4,0,.2,1)
+        display: inline-flex
+        align-items: center
+        gap: rem(5)
+        padding: 0 rem(5)
+        height: rem(20)
+
+        +mq(minSmall)
+          height: rem(32)
+
+        i
+          transition: transform .4s cubic-bezier(.4,0,.2,1)
+          width: rem(16)
+          height: rem(16)
+
+        span
+          transition: color .4s cubic-bezier(.4,0,.2,1)
+          font-size: rem(16)
+          font-weight: 700
+          line-height: 1
+          color: $hex-dark
+
+        &:hover, &:focus
+          i
+            transform: translateX(rem(-5))
+
+          span
+            color: $hex-black
+
+  article
+    padding: 0 rem(15)
+    max-width: rem(720)
+    width: 100%
+
+    header
+      padding: rem(17) 0
+
+      h1
+        font-size: rem(24)
+        line-height: 1.16666667
+        color: $hex-black
+
+      time
+        font-size: rem(14)
+        color: $hex-dark
+
+    .description
+      padding: rem(27) 0
+
+      strong
+        font-weight: 800
+
+      p
+        margin: rem(7) 0
+
+      p, li
+        font-size: rem(14)
+        font-weight: 400
+        line-height: 1.375
+
+        +mq(minSmall)
+          font-size: rem(16)
+
+      ol, ul
+        margin: rem(7) 0 rem(7) rem(16)
+        padding-left: rem(16)
+
+        li
+          margin: rem(3) 0
+          border-top: 0
+
+      ol
+        list-style-type: decimal
+
+      ul
+        list-style-type: disc
+
+      a
+        color: $hex-accent
+        text-decoration: underline
+
+    .button
+      margin-top: rem(23)
+      text-align: center
+
+      button
+        display: inline-flex
+        align-items: center
+        gap: rem(5)
+        transition: all .4s cubic-bezier(.4,0,.2,1)
+        background: transparent
+        border: 1px solid $hex-black
+        border-radius: rem(3)
+        padding: rem(12) rem(17)
+        font-size: rem(16)
+        font-weight: 900
+        color: $hex-black
+
+        i
+          transition: transform .4s cubic-bezier(.4,0,.2,1)
+          width: rem(16)
+          height: rem(16)
+
+        &:hover, &:focus
+          i
+            transform: translateX(rem(-5))
+
+          span
+            color: $hex-black

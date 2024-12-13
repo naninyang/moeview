@@ -1,0 +1,120 @@
+.open
+  display: flex
+  justify-content: center
+  gap: rem(25)
+  padding: calc(env(safe-area-inset-top) + rem(105)) calc(env(safe-area-inset-right) + rem(15)) rem(72) calc(env(safe-area-inset-left) + rem(15))
+
+  +mq(minLarge)
+    padding: calc(env(safe-area-inset-top) + rem(135)) calc(env(safe-area-inset-right) + rem(25)) rem(102) calc(env(safe-area-inset-left) + rem(25))
+
+  .top-link
+    button
+      span
+        color: $hex-white
+
+  .content
+    max-width: rem(720)
+    width: 100%
+
+    h1
+      display: flex
+      align-items: flex-end
+      justify-content: center
+      gap: rem(7)
+      font-size: rem(24)
+      font-weight: 900
+      color: $hex-azalea
+
+      +mq(minSmall)
+        font-size: rem(64)
+
+      em
+        font-size: rem(16)
+        font-weight: 300
+        font-style: normal
+
+        +mq(minSmall)
+          font-size: rem(36)
+
+    dl
+      display: flex
+      justify-content: center
+      gap: rem(15)
+      margin: rem(57)
+      font-size: rem(16)
+
+      +mq(minMedium)
+        margin: rem(52)
+
+      +mq(maxSmall)
+        flex-direction: column
+        align-items: center
+
+      +mq(minLarge)
+        gap: rem(37)
+
+      div
+        display: flex
+        gap: rem(17)
+
+        +mq(maxMedium)
+          width: 100%
+          justify-content: center
+
+      dt, dd
+        line-height: 1
+
+        +mq(maxMedium)
+          +coln
+
+      dt
+        color: $hex-light
+
+        +mq(maxMedium)
+          width: rem(185)
+          text-align: right
+
+      dd
+        font-weight: 900
+        color: $hex-white
+
+        +mq(maxMedium)
+          width: rem(95)
+
+    p
+      margin: rem(57) 0
+      text-align: center
+      color: $hex-white
+
+      a
+        color: $hex-azalea
+        font-weight: 800
+        text-decoration: underline
+
+    hr
+      margin: rem(52) 0
+      border: 1px solid rgba($hex-light, .2)
+
+      +mq(minLarge)
+        margin: rem(72) 0
+
+    .list
+      margin: rem(50) auto 0
+      width: 100%
+      max-width: rem(720)
+
+      & :last-of-type hr
+        display: none
+
+      h2
+        padding-bottom: rem(23)
+        font-weight: 800
+        color: $hex-white
+
+      pre, code
+        white-space: pre-wrap
+        color: $hex-light
+        line-height: 1.5
+
+        +mq(maxExtraSmall)
+          font-size: rem(14)

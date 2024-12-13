@@ -1,0 +1,397 @@
+.usage
+  display: flex
+  justify-content: center
+  gap: rem(25)
+  padding-bottom: rem(72)
+
+  +mq(minLarge)
+    padding-bottom: rem(102)
+
+  .content
+    display: flex
+    flex-direction: column
+    gap: rem(52)
+    width: 100%
+
+    h1
+      display: flex
+      align-items: flex-end
+      justify-content: center
+      gap: rem(7)
+      padding-top: rem(27)
+      font-size: rem(24)
+      font-weight: 900
+      color: $hex-azalea
+
+      +mq(minLarge)
+        padding-top: rem(57)
+
+      +mq(minSmall)
+        font-size: rem(52)
+
+      em
+        font-size: rem(16)
+        font-weight: 300
+        font-style: normal
+
+        +mq(minSmall)
+          font-size: rem(36)
+
+    .about
+      display: flex
+      flex-direction: column
+      align-items: center
+
+      section
+        display: flex
+        width: 100%
+        padding: rem(52) rem(27)
+
+        &:not(.amusement)
+          justify-content: center
+          align-items: center
+          padding: rem(52) rem(27)
+          min-height: calc(100vh - rem(78))
+
+          > div
+            width: 100%
+
+          .dummy
+            background-repeat: no-repeat
+            background-position: 50% 0
+            background-size: contain
+
+        &:nth-of-type(1)
+          background: url('/about/primary.webp') no-repeat fixed 50% 50%/cover
+
+          &.safari
+            background-attachment: scroll
+
+        &:nth-of-type(3), &:nth-of-type(5)
+          background-color: $hex-light
+
+        .primary
+          display: flex
+          flex-direction: column
+          gap: rem(37)
+
+          h1
+            display: flex
+            flex-direction: column
+            align-items: center
+            gap: rem(27)
+
+            span
+              font-size: rem(24)
+              line-height: 1
+              color: $hex-white
+              font-variation-settings: "opsz" 900,"wght" 900
+
+              +mq(minSmall)
+                font-size: rem(32)
+
+              +mq(minMedium)
+                font-size: rem(64)
+
+              em, i
+                font-style: normal
+                font-size: rem(24)
+
+                +mq(minSmall)
+                  font-size: rem(32)
+
+                +mq(minMedium)
+                  font-size: rem(64)
+
+              em
+                color: $hex-azalea
+
+              i
+                color: $hex-accent
+
+            > i
+              display: inline-block
+              aspect-ratio: 370 / 105
+              width: rem(123)
+
+              +mq(minSmall)
+                width: rem(187)
+
+              +mq(minMedium)
+                width: rem(370)
+
+          p
+            display: flex
+            flex-direction: column
+            align-items: center
+            font-size: rem(14)
+            line-height: 1.541
+            color: $hex-light
+
+            +mq(minSmall)
+              font-size: rem(20)
+
+            +mq(minMedium)
+              font-size: rem(24)
+
+        .soul
+          display: flex
+          flex-direction: column
+          align-items: center
+
+          .dummy
+            display: flex
+            justify-content: center
+            aspect-ratio: 570 / 436
+            background-image: url(/about/soul.webp)
+            width: 100%
+            max-width: rem(572)
+
+        .fit
+          display: flex
+          flex-direction: column
+          align-items: center
+
+          .dummy
+            aspect-ratio: 570 / 433
+            background-image: url(/about/fit.webp)
+            width: 100%
+            max-width: rem(987)
+
+        .life
+          margin: 0 auto
+          max-width: rem(1320)
+
+          .dummies
+            display: flex
+            gap: rem(23)
+            justify-content: center
+
+            +mq(maxExtraSmall)
+              flex-direction: column
+
+            .dummy
+              display: flex
+              justify-content: center
+              aspect-ratio: 430 / 570
+
+              +mq(minSmall)
+                width: calc(33.33% - rem(23))
+
+              &:nth-of-type(1)
+                background-image: url(/about/life1.webp)
+
+              &:nth-of-type(2)
+                background-image: url(/about/life2.webp)
+
+              &:nth-of-type(3)
+                background-image: url(/about/life3.webp)
+
+        .amusement
+          margin: 0 auto
+          max-width: rem(1320)
+          gap: rem(17)!important
+
+          +mq(minSmall)
+            gap: rem(32)!important
+
+          .headline
+            h2
+              width: 100%
+              font-size: rem(24)!important
+
+              +mq(minSmall)
+                font-size: rem(32)!important
+
+              a
+                display: inline-flex
+                align-items: center
+                gap: rem(7)
+                color: $hex-dark
+
+                &:hover, &:focus
+                  span
+                    color: $hex-accent
+                    border-bottom: rem(3) solid $hex-accent
+
+                  svg
+                    transform: translateX(rem(5))
+
+                span, svg
+                  transition: all .5s cubic-bezier(.4,0,.2,1)
+                  display: inline-block
+
+                span
+                  border-bottom: rem(3) solid transparent
+                  font-size: rem(20)
+
+                  +mq(minSmall)
+                    font-size: rem(24)
+
+                svg
+                  width: rem(24)
+                  height: rem(24)
+
+                  +mq(minSmall)
+                    width: rem(32)
+                    height: rem(32)
+
+                  path
+                    fill: $hex-accent
+
+          .images
+            display: flex
+            flex-wrap: wrap
+            gap: rem(23)
+
+            .image
+              display: flex
+              flex-direction: column
+              gap: rem(7)
+              width: calc(50% - rem(12))
+              padding-bottom: rem(7)
+
+              +mq(minSmall)
+                gap: rem(7)
+                width: calc(25% - rem(18))
+                padding-bottom: rem(12)
+
+              img
+                display: block
+                width: 100%
+                height: auto
+                aspect-ratio: 390 / 560
+                object-fit: cover
+
+              span
+                font-size: rem(14)
+
+                +mq(minSmall)
+                  font-size: rem(16)
+
+                +mq(minMedium)
+                  font-size: rem(20)
+
+        > div:not(.primary)
+          display: flex
+          flex-direction: column
+          gap: rem(37)
+
+          +mq(minSmall)
+            gap: rem(72)
+
+          .headline
+            display: flex
+            flex-direction: column
+            align-items: center
+            gap: rem(37)
+
+            h2
+              font-size: rem(24)
+              line-height: 1
+
+              +mq(minSmall)
+                font-size: rem(32)
+
+              +mq(minMedium)
+                font-size: rem(64)
+
+            p
+              display: flex
+              flex-direction: column
+              align-items: center
+              font-size: rem(14)
+              line-height: 1.54
+
+              +mq(minSmall)
+                font-size: rem(16)
+
+              +mq(minMedium)
+                font-size: rem(24)
+
+            em
+              font-size: rem(14)
+              line-height: 1
+
+              +mq(minMedium)
+                font-size: rem(16)
+
+    .container
+      display: flex
+      flex-direction: column
+      gap: rem(52)
+      margin: rem(17) 0
+      padding: 0 rem(27) rem(57)
+
+      article
+        display: flex
+        flex-direction: column
+        gap: rem(37)
+
+        +mq(minMedium)
+          gap: rem(52)
+          margin: rem(52) 0
+
+      h2
+        font-size: rem(20)
+        text-align: center
+
+        +mq(minSmall)
+          font-size: rem(32)
+
+        +mq(minMedium)
+          font-size: rem(52)
+
+      section
+        display: flex
+        flex-direction: column
+        gap: rem(7)
+
+      p
+        display: flex
+        flex-direction: column
+        font-size: rem(14)
+        line-height: 1.3
+        color: $hex-dark
+        text-align: center
+
+        +mq(minSmall)
+          font-size: rem(16)
+
+        +mq(minMedium)
+          font-size: rem(20)
+
+      .button-group
+        display: flex
+        justify-content: center
+        align-items: center
+        margin: rem(32) 0
+        gap: rem(12)
+        text-align: center
+
+        +mq(minMedium)
+          flex-direction: row
+          margin: rem(52) 0 rem(32)
+
+        a, button
+          display: inline-flex
+          background-color: transparent
+          width: rem(170)
+          justify-content: center
+          border: rem(1) solid $hex-accent
+          border-radius: rem(3)
+          padding: rem(12) rem(32)
+          font-size: rem(16)
+          font-weight: 700
+          line-height: 1
+          color: $hex-accent
+          transition: all .3s cubic-bezier(.4,0,.2,1)
+
+          +mq(minMedium)
+            width: auto
+            padding: rem(17) rem(52)
+            font-size: rem(20)
+
+          &:hover, &:focus
+            background-color: $hex-accent
+            color: $hex-light
