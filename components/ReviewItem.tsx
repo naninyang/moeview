@@ -390,7 +390,7 @@ export function ReviewItem({ moeview }: { moeview: any }) {
                           )}
                         </>
                       ) : (
-                        '시리즈'
+                        <>시리즈</>
                       )}
                     </em>
                   </>
