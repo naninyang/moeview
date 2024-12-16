@@ -367,20 +367,6 @@ export interface RecommendData {
   isPublish: boolean;
 }
 
-export interface RecommendParmalinkData {
-  id: number;
-  attributes: {
-    subject: string;
-    description: string;
-    chloe: any;
-    gpt: any;
-    fieldName: string;
-    fieldValue: string;
-    question: string;
-    createdAt: string;
-  };
-}
-
 export interface Counts {
   total: number;
   count: number;
