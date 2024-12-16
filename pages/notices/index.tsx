@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { GetServerSideProps, NextPage } from 'next';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 import { isSafari } from 'react-device-detect';
 import { NoticeData } from '@/types';
 import Seo, { originTitle } from '@/components/Seo';
@@ -105,12 +106,12 @@ const Notices: NextPage<NoticeProps> = ({ noticesData, data, currentPage, error 
             <ul>
               {data.map((notice) => (
                 <li key={notice.idx}>
-                  <Anchor key={notice.idx} href={`/notices/${notice.idx}`} scroll={false} shallow={true}>
+                  <Link key={notice.idx} href={`/notices/${notice.idx}`} scroll={false} shallow={true}>
                     <strong>
                       <span>{notice.subject}</span>
                     </strong>
                     <time>{notice.created}</time>
-                  </Anchor>
+                  </Link>
                 </li>
               ))}
             </ul>
