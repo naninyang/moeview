@@ -81,7 +81,7 @@ const Notice = ({ notice }: { notice: NoticePermalinkData | null }) => {
             pageTitles={`${notice.attributes.subject} - ${originTitle}`}
             pageTitle={`${notice.attributes.subject}`}
             pageDescription={`${notice.attributes.description}`}
-            pageImg={`https://semo.dev1stud.io/og-image.webp?ts=${timestamp}`}
+            pageImg={`https://moe.dev1stud.io/og-image.webp?ts=${timestamp}`}
           />
           <div className="top-link">
             <button onClick={previousPageHandler} type="button">

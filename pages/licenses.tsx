@@ -23,7 +23,7 @@ function Licenses() {
         pageTitles={`저작권 안내 - ${originTitle}`}
         pageTitle="저작권 안내"
         pageDescription="저작권 안내"
-        pageImg={`https://semo.dev1stud.io/og-image.webp?ts=${timestamp}`}
+        pageImg={`https://moe.dev1stud.io/og-image.webp?ts=${timestamp}`}
       />
       <div className="top-link">
         <button onClick={previousPageHandler} type="button">

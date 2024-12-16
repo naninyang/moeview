@@ -60,7 +60,7 @@ function ContactForm() {
         pageTitles={`문의사항 - ${originTitle}`}
         pageTitle="문의사항"
         pageDescription="무엇이든 물어보세요"
-        pageImg={`https://semo.dev1stud.io/og-image.webp?ts=${timestamp}`}
+        pageImg={`https://moe.dev1stud.io/og-image.webp?ts=${timestamp}`}
       />
       <div className="top-link">
         <button onClick={previousPageHandler} type="button">

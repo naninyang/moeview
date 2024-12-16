@@ -110,7 +110,7 @@ function Hanguk({ subtitleData, subtitleError }: { subtitleData: any; subtitleEr
         pageTitles={`자막/더빙/베리어프리 지원 여부 확인하기 - ${originTitle}`}
         pageTitle={`자막/더빙/베리어프리 지원 여부 확인하기`}
         pageDescription="한글 자막, 한국어 더빙, 베리어프리(CC/AD)"
-        pageImg={`https://semo.dev1stud.io/og-hanguk.webp?ts=${timestamp}`}
+        pageImg={`https://moe.dev1stud.io/og-hanguk.webp?ts=${timestamp}`}
       />
       <ChoiceBarrierFree />
       <div className="headline">

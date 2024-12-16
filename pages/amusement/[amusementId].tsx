@@ -903,7 +903,7 @@ export default function Amusement({
             pageTitles={`404 NOT FOUND - ${originTitle}`}
             pageTitle={`404 NOT FOUND`}
             pageDescription={`존재하지 않는 작품일걸요?`}
-            pageImg={`https://semo.dev1stud.io/missing.webp`}
+            pageImg={`https://moe.dev1stud.io/missing.webp`}
           />
           <p className={styles.loading}>작품 불러오는 중...</p>
         </main>

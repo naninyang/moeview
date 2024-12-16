@@ -1,4 +1,4 @@
-const MoeviewAPI = 'https://semo.dev1stud.io/api/sitemapAmusement';
+const MoeviewAPI = 'https://moe.dev1stud.io/api/sitemapAmusement';
 // const MoeviewAPI = 'http://localhost:3123/api/sitemapAmusement';
 
 function generateSiteMap(moeviews) {
@@ -8,7 +8,7 @@ function generateSiteMap(moeviews) {
         .map(({ idx, created }) => {
           return `
             <url>
-              <loc>https://semo.dev1stud.io/${idx}</loc>
+              <loc>https://moe.dev1stud.io/${idx}</loc>
               <lastmod>${created}</lastmod>
             </url>
           `;

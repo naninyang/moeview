@@ -114,7 +114,7 @@ function Platforms({ tvingData, tvingError }: { tvingData: any; tvingError: stri
         pageTitles={`OTT 플랫폼 또는 방송국 선택하기 - ${originTitle}`}
         pageTitle={`OTT 플랫폼 또는 방송국 선택하기`}
         pageDescription="아마존 프라임비디오 / 애플 TV+ / 디즈니+ & 스타+ / 넷플릭스 / 티빙 & 파라마운트+ / 왓챠 / 웨이브"
-        pageImg={`https://semo.dev1stud.io/og-platforms.webp?ts=${timestamp}`}
+        pageImg={`https://moe.dev1stud.io/og-platforms.webp?ts=${timestamp}`}
       />
       <ChoiceGenre />
       <div className="headline">

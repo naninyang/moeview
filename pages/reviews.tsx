@@ -39,7 +39,7 @@ function Review({ data, error, currentPage }: { data: any; error: string; curren
       <Seo
         pageTitle="세상의 모든 리뷰"
         pageDescription="세상의 모든 리뷰를 수집한다"
-        pageImg={`https://semo.dev1stud.io/og-image.webp?ts=${timestamp}`}
+        pageImg={`https://moe.dev1stud.io/og-image.webp?ts=${timestamp}`}
       />
       <div className="headline">
         <h1 className="April16thPromise">

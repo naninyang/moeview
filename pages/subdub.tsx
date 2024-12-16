@@ -99,7 +99,7 @@ function Subdub({ subtitleData, subtitleError }: { subtitleData: any; subtitleEr
         pageTitles={`자막/더빙 지원 여부 확인하기 - ${originTitle}`}
         pageTitle={`자막/더빙 지원 여부 확인하기`}
         pageDescription="한글 자막, 한국어 더빙"
-        pageImg={`https://semo.dev1stud.io/og-subdub.webp?ts=${timestamp}`}
+        pageImg={`https://moe.dev1stud.io/og-subdub.webp?ts=${timestamp}`}
       />
       <ChoiceBarrierFree />
       <div className="headline">

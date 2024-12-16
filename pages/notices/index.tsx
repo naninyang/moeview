@@ -77,7 +77,7 @@ const Notices: NextPage<NoticeProps> = ({ noticesData, data, currentPage, error 
         pageTitles={`공지사항 - ${originTitle}`}
         pageTitle="공지사항"
         pageDescription="모애뷰 공지를 확인하세요"
-        pageImg={`https://semo.dev1stud.io/og-image.webp?ts=${timestamp}`}
+        pageImg={`https://moe.dev1stud.io/og-image.webp?ts=${timestamp}`}
       />
       <div className="top-link">
         <button onClick={previousPageHandler} type="button">

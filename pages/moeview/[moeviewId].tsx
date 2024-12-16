@@ -801,7 +801,7 @@ export default function MoeviewDetail({
             pageTitles={`404 NOT FOUND - ${originTitle}`}
             pageTitle={`404 NOT FOUND`}
             pageDescription={`서버 에러 또는 삭제/비공개된 영상`}
-            pageImg={`https://semo.dev1stud.io/missing.webp`}
+            pageImg={`https://moe.dev1stud.io/missing.webp`}
             pageOgType={'video.other'}
             pageImgWidth={1920}
             pageImgHeight={1080}
@@ -1559,7 +1559,7 @@ export default function MoeviewDetail({
         pageImg={
           moeviewData.attributes
             ? `https://i.ytimg.com/vi/${moeviewData.attributes.video}/hqdefault.jpg`
-            : 'https://semo.dev1stud.io/missing.webp'
+            : 'https://moe.dev1stud.io/missing.webp'
         }
         pageOgType={'video.other'}
         pageImgWidth={1920}

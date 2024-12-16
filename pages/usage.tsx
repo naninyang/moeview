@@ -5,12 +5,12 @@ import Seo, { originTitle } from '@/components/Seo';
 import { BackButton } from '@/components/Icons';
 import styles from '@/styles/Usage.module.sass';
 import styled from '@emotion/styled';
-import { vectors } from '@/components/vectors';
 import Image from 'next/image';
 import Anchor from '@/components/Anchor';
+import { VectorsMoeview } from '@/components/vectors';
 
 const SemoviewLogo = styled.i({
-  background: `url(${vectors.semoview}) no-repeat 50% 50%/contain`,
+  background: `url(${VectorsMoeview.src}) no-repeat 50% 50%/contain`,
 });
 
 function Usage() {
@@ -40,7 +40,7 @@ function Usage() {
         pageTitles={`이용안내 - ${originTitle}`}
         pageTitle="이용안내"
         pageDescription="이용 안내"
-        pageImg={`https://semo.dev1stud.io/og-image.webp?ts=${timestamp}`}
+        pageImg={`https://moe.dev1stud.io/og-image.webp?ts=${timestamp}`}
       />
       <div className="top-link">
         <button onClick={previousPageHandler} type="button">

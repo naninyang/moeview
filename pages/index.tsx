@@ -220,7 +220,7 @@ function Home({ bannerData, bannerError }: { bannerData: any; bannerError: strin
       <Seo
         pageTitle="모애뷰"
         pageDescription="모듬 애니리뷰"
-        pageImg={`https://semo.dev1stud.io/og-image.webp?ts=${timestamp}`}
+        pageImg={`https://moe.dev1stud.io/og-image.webp?ts=${timestamp}`}
       />
       {(bannerError || error) && (
         <div className={styles.error}>

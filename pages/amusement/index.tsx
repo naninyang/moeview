@@ -899,7 +899,7 @@ function Amusement({
         pageTitles={`${amuseTitles} - ${originTitle}`}
         pageTitle={`${amuseTitles}`}
         pageDescription={description}
-        pageImg={`https://semo.dev1stud.io/og-${ogAddress}.webp?ts=${timestamp}`}
+        pageImg={`https://moe.dev1stud.io/og-${ogAddress}.webp?ts=${timestamp}`}
       />
       <div className="top-link">
         {router.query.category && !router.query.tag && !router.query.hanguk && (

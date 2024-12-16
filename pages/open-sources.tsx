@@ -27,7 +27,7 @@ function OpenSources({ licenses }: { licenses: License[] }) {
         pageTitles={`오픈소스 - ${originTitle}`}
         pageTitle="오픈소스"
         pageDescription="'모애뷰'에서 사용한 오픈소스"
-        pageImg={`https://semo.dev1stud.io/og-image.webp?ts=${timestamp}`}
+        pageImg={`https://moe.dev1stud.io/og-image.webp?ts=${timestamp}`}
       />
       <div className={`top-link ${styles['top-link']}`}>
         <button onClick={previousPageHandler} type="button">
