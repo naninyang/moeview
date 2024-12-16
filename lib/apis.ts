@@ -9,7 +9,6 @@ export const formatDate = (datetime: string) => {
   const hours = date.getUTCHours().toString().padStart(2, '0');
   const minutes = date.getUTCMinutes().toString().padStart(2, '0');
   const seconds = date.getUTCSeconds().toString().padStart(2, '0');
-
   return `${year}${month}${day}${hours}${minutes}${seconds}`;
 };
 
@@ -21,7 +20,6 @@ export const formatDateDetail = (datetime: string) => {
   const hours = date.getUTCHours().toString().padStart(2, '0');
   const minutes = date.getUTCMinutes().toString().padStart(2, '0');
   const seconds = date.getUTCSeconds().toString().padStart(2, '0');
-
   return `${year}${month}${day}${hours}${minutes}${seconds}`;
 };
 
@@ -915,7 +913,6 @@ export async function getBannerData() {
     isLight: data.attributes.isLight,
     type: data.attributes.type,
   }));
-
   return banners;
 }
 
@@ -1026,7 +1023,6 @@ export async function getAmusementData(amusement: string) {
     isPublish: amusementData.attributes.isPublish,
     amusementsCount: 0,
   };
-
   return rowsData;
 }
 
@@ -1053,7 +1049,6 @@ export async function getRelationsData(relations: string, type: string) {
       title: data.attributes.title,
       relations: data.attributes.relations,
     }));
-
     return rowsData;
   } else {
     let filterQuery = `${process.env.STRAPI_URL}/api/amusement-jejeups/?sort[0]=id:desc&pagination[page]=1&pagination[pageSize]=100&filters[relations][$contains]=${relations}`;
@@ -1101,7 +1096,6 @@ export async function getRelationsData(relations: string, type: string) {
       order: data.attributes.order,
       isPublish: data.attributes.isPublish,
     }));
-
     return rowsData;
   }
 }
@@ -1153,7 +1147,6 @@ export async function getSeasonData(season: string) {
     relName: data.attributes.relName,
     isPublish: data.attributes.isPublish,
   }));
-
   return rowsData;
 }
 
