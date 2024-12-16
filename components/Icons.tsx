@@ -153,7 +153,7 @@ const rem = (px: number): string => `${px / 16}rem`;
 
 export const AmazonOriginal = styled.i({
   width: rem(52),
-  background: `url(${VectorsOttAmazon.src.src}) no-repeat 50% 50%/contain`,
+  background: `url(${VectorsOttAmazon.src}) no-repeat 50% 50%/contain`,
 });
 
 export const AppleOriginal = styled.i({
