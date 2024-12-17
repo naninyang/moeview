@@ -7,10 +7,14 @@ import styles from '@/styles/Usage.module.sass';
 import styled from '@emotion/styled';
 import Image from 'next/image';
 import Anchor from '@/components/Anchor';
-import { VectorsMoeview } from '@/components/vectors';
+import { VectorsMoeview, VectorsSemoview } from '@/components/vectors';
+
+const MoeviewLogo = styled.i({
+  background: `url(${VectorsMoeview.src}) no-repeat 50% 50%/contain`,
+});
 
 const SemoviewLogo = styled.i({
-  background: `url(${VectorsMoeview.src}) no-repeat 50% 50%/contain`,
+  background: `url(${VectorsSemoview.src}) no-repeat 50% 50%/contain`,
 });
 
 function Usage() {
@@ -52,15 +56,23 @@ function Usage() {
         <div className={`${styles.about} seed`}>
           <section className={deviceSafari !== 'isSafari' ? styles.safari : ''}>
             <div className={styles.primary}>
-              <h1>
-                <span>
-                  <em>세</em>상의 <em>모</em>든 <i>리뷰</i>
-                </span>
-                <SemoviewLogo />
-              </h1>
+              <div className={styles.head}>
+                <h1>
+                  <span>
+                    <em>모</em>듬 <em>애</em>니 리<i>뷰</i>
+                  </span>
+                  <MoeviewLogo />
+                </h1>
+                <h1>
+                  <span>
+                    <em>세</em>상의 <em>모</em>든 <i>리뷰</i>
+                  </span>
+                  <SemoviewLogo />
+                </h1>
+              </div>
               <p>
-                모애뷰는 유튜브에 올라온 리뷰 영상들을 <span>눌러보지 않고도 어떤 작품인지 작품 정보를</span> 알 수 있게
-                해보자는 생각으로 탄생한 리뷰 전용 서비스입니다.
+                세모뷰와 모애뷰는 유튜브에 올라온 리뷰 영상들을 <span>눌러보지 않고도 어떤 작품인지 작품 정보를</span>{' '}
+                알 수 있게 해보자는 생각으로 탄생한 리뷰 전용 서비스입니다.
               </p>
             </div>
           </section>
@@ -92,6 +104,9 @@ function Usage() {
                 <p>
                   당신의 라이프에 맞춰서 골라 보세요! <span>영화, 드라마, 애니메이션, </span> 그리고 방송사 공식
                   요약본에 게임 실황까지!
+                </p>
+                <p>
+                  *모애뷰에서는 애니메이션만 취급합니다. <span>(세모뷰에서는 애니메이션 취급하지 않습니다.)</span>
                 </p>
               </div>
               <div className={styles.dummies}>
@@ -130,7 +145,7 @@ function Usage() {
                 </div>
                 <div className={styles.image}>
                   <Image
-                    src="https://cdn.dev1stud.io/moeview/PuFSahyVDNbQLHubBlJUzRzjR7RJCIomI1dYfzQKh_dr2SBHI2S2JI67EkONetHLhZSmPCX6UV20osNcSjwWp0U-slL3NXucdjDu-Vm-Dp4Sq8UU30MCTvMOmzvLlo6iGU-zr-T8ixTJdQsk_ZrKVivFpi0XwDNYalTmABlWUdk.webp"
+                    src="https://cdn.dev1stud.io/jejeup/PuFSahyVDNbQLHubBlJUzRzjR7RJCIomI1dYfzQKh_dr2SBHI2S2JI67EkONetHLhZSmPCX6UV20osNcSjwWp0U-slL3NXucdjDu-Vm-Dp4Sq8UU30MCTvMOmzvLlo6iGU-zr-T8ixTJdQsk_ZrKVivFpi0XwDNYalTmABlWUdk.webp"
                     width="390"
                     height="560"
                     alt=""
@@ -141,7 +156,7 @@ function Usage() {
                 </div>
                 <div className={styles.image}>
                   <Image
-                    src="https://cdn.dev1stud.io/moeview/FPolvRgxUwYWhK3biTFdqEo4si4SSeq6p0IhlM9ORhmlt9_wDYgwD2z5tvytmOTQmy95eyAc2jl0fZJSmMRB0hC7xzbwM74kKtqmuRAFSqhPJNms8G7zVfJSPMJvG0E9iXlC4hXoTefS5q75S8DM3Q.webp"
+                    src="https://cdn.dev1stud.io/jejeup/FPolvRgxUwYWhK3biTFdqEo4si4SSeq6p0IhlM9ORhmlt9_wDYgwD2z5tvytmOTQmy95eyAc2jl0fZJSmMRB0hC7xzbwM74kKtqmuRAFSqhPJNms8G7zVfJSPMJvG0E9iXlC4hXoTefS5q75S8DM3Q.webp"
                     width="390"
                     height="560"
                     alt=""
@@ -152,7 +167,7 @@ function Usage() {
                 </div>
                 <div className={styles.image}>
                   <Image
-                    src="https://cdn.dev1stud.io/moeview/gayBfQsk13TyNSB-0jv6myIkPnL8UPX4MMp4SZ6mQ2m4b8_vwaHugpF0voyubNLlBvLcgbjKN4zZza-5akLpB1hF2JPYHV8x8hX_cES-O39DwK_hjEjLDbydyGSL1NKnbtHsPUX3gMEU5gI5qSuXaA.webp"
+                    src="https://cdn.dev1stud.io/jejeup/gayBfQsk13TyNSB-0jv6myIkPnL8UPX4MMp4SZ6mQ2m4b8_vwaHugpF0voyubNLlBvLcgbjKN4zZza-5akLpB1hF2JPYHV8x8hX_cES-O39DwK_hjEjLDbydyGSL1NKnbtHsPUX3gMEU5gI5qSuXaA.webp"
                     width="390"
                     height="560"
                     alt=""
@@ -185,7 +200,7 @@ function Usage() {
                 </div>
                 <div className={styles.image}>
                   <Image
-                    src="https://cdn.dev1stud.io/moeview/NCdyhGX3H0R8e3T9MN8tKY5WU1UZvto_askemNHtPdsrPaFUX6av40cVHeNKztt5T2hHpKIqfHhsZo5rbzkmWad11nljIWJGxuN6R18IN8M3HJ7LV9XGM1R3EPpZPwtVGhu9Nb4Q2BBXgKzWvAx77A.webp"
+                    src="https://cdn.dev1stud.io/jejeup/NCdyhGX3H0R8e3T9MN8tKY5WU1UZvto_askemNHtPdsrPaFUX6av40cVHeNKztt5T2hHpKIqfHhsZo5rbzkmWad11nljIWJGxuN6R18IN8M3HJ7LV9XGM1R3EPpZPwtVGhu9Nb4Q2BBXgKzWvAx77A.webp"
                     width="390"
                     height="560"
                     alt=""
@@ -196,7 +211,7 @@ function Usage() {
                 </div>
                 <div className={styles.image}>
                   <Image
-                    src="https://cdn.dev1stud.io/moeview/q2OsUK4Fnic8r4V04DD2dujPs7jimlauRz8SEW3bb9ElWTde1b6tEF1A7TX-4MfhTrYj_keORVG4QY2gffhlwng9mqIFV2CHj2Q400tcweCHlYRhmCwLnpjNHrkHbBb-_qmxAm0MHUSgIyjuFjwaSrt_rA-CWWeThmiL9jyL7_s.webp"
+                    src="https://cdn.dev1stud.io/jejeup/q2OsUK4Fnic8r4V04DD2dujPs7jimlauRz8SEW3bb9ElWTde1b6tEF1A7TX-4MfhTrYj_keORVG4QY2gffhlwng9mqIFV2CHj2Q400tcweCHlYRhmCwLnpjNHrkHbBb-_qmxAm0MHUSgIyjuFjwaSrt_rA-CWWeThmiL9jyL7_s.webp"
                     width="390"
                     height="560"
                     alt=""
@@ -207,7 +222,7 @@ function Usage() {
                 </div>
                 <div className={styles.image}>
                   <Image
-                    src="https://cdn.dev1stud.io/moeview/1zcPA0jfoHKcgfkjKfKdvEYQkH-UvY9L1ABzTm3LJPEEphcBmf-zxUMf8R9YZrGyz7ahadkpTEq3oqa0wn3_l9Z1xoD8Synm_lQMaTtQE-Xbi0lZxho_CodP-WKuz_R5bZzX-jyehuut68EMrhR0yw.webp"
+                    src="https://cdn.dev1stud.io/jejeup/1zcPA0jfoHKcgfkjKfKdvEYQkH-UvY9L1ABzTm3LJPEEphcBmf-zxUMf8R9YZrGyz7ahadkpTEq3oqa0wn3_l9Z1xoD8Synm_lQMaTtQE-Xbi0lZxho_CodP-WKuz_R5bZzX-jyehuut68EMrhR0yw.webp"
                     width="390"
                     height="560"
                     alt=""
@@ -218,7 +233,7 @@ function Usage() {
                 </div>
                 <div className={styles.image}>
                   <Image
-                    src="https://cdn.dev1stud.io/moeview/F1Z8xrEcenSzS26tUgbZC-WdhD7EnyROdyaZU9aBAGKiYVft4N__2TwNDuDvXjUAozmitHLKrirbPOkV7arPikKI8_E9TDJDDKL0v402Yo9ia5b4ifKcB8DLBL8cEA9xl5-P2q4VbSGoS-gX6NB8Ig.webp"
+                    src="https://cdn.dev1stud.io/jejeup/F1Z8xrEcenSzS26tUgbZC-WdhD7EnyROdyaZU9aBAGKiYVft4N__2TwNDuDvXjUAozmitHLKrirbPOkV7arPikKI8_E9TDJDDKL0v402Yo9ia5b4ifKcB8DLBL8cEA9xl5-P2q4VbSGoS-gX6NB8Ig.webp"
                     width="390"
                     height="560"
                     alt=""
@@ -229,7 +244,7 @@ function Usage() {
                 </div>
                 <div className={styles.image}>
                   <Image
-                    src="https://cdn.dev1stud.io/moeview/9XdpzDYU7AN6TY5m-oao3aq9RlqqeHtvi3KSFavNzlUrCyvQoq6cpfb3LIMwawYe19C20kfeuIla00pLHNnPGvjriPMfArIRjWOC4sIrrz4BRaFfZdXMqMHOcZ1gq9eIOTkJBCkStzl60MoqKaoNJQ.webp"
+                    src="https://cdn.dev1stud.io/jejeup/9XdpzDYU7AN6TY5m-oao3aq9RlqqeHtvi3KSFavNzlUrCyvQoq6cpfb3LIMwawYe19C20kfeuIla00pLHNnPGvjriPMfArIRjWOC4sIrrz4BRaFfZdXMqMHOcZ1gq9eIOTkJBCkStzl60MoqKaoNJQ.webp"
                     width="390"
                     height="560"
                     alt=""
@@ -240,7 +255,7 @@ function Usage() {
                 </div>
                 <div className={styles.image}>
                   <Image
-                    src="https://cdn.dev1stud.io/moeview/10RgdhHqxim_6778EsKjzWkhMQG3JOnJQzk5jU4VGDDNUkh_B6nmb_0EFLSXl_PaoXmxtQIQ0_IcEp2mxQXGxGDYKHuBt_b2NLrlLWOsF_nD49IxOen9KzJw_2TUxhtCJ_il0vmOu4GK1XDHxr9KSA.webp"
+                    src="https://cdn.dev1stud.io/jejeup/10RgdhHqxim_6778EsKjzWkhMQG3JOnJQzk5jU4VGDDNUkh_B6nmb_0EFLSXl_PaoXmxtQIQ0_IcEp2mxQXGxGDYKHuBt_b2NLrlLWOsF_nD49IxOen9KzJw_2TUxhtCJ_il0vmOu4GK1XDHxr9KSA.webp"
                     width="390"
                     height="560"
                     alt=""

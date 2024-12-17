@@ -1,4 +1,5 @@
 export { default as VectorsBackward } from './backward.svg?url';
+export { default as VectorsSemoview } from './semoview.svg?url';
 export { default as VectorsBackwardLight } from './backwardLight.svg?url';
 export { default as VectorsMoeview } from './moeview.svg?url';
 export { default as VectorsMoeviewDark } from './moeviewDark.svg?url';
