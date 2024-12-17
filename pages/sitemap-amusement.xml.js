@@ -1,14 +1,14 @@
-const MoeviewAPI = 'https://moe.dev1stud.io/api/sitemapAmusement';
-// const MoeviewAPI = 'http://localhost:3123/api/sitemapAmusement';
+const JejeupAPI = 'https://semo.dev1stud.io/api/sitemapAmusement';
+// const JejeupAPI = 'http://localhost:3123/api/sitemapAmusement';
 
-function generateSiteMap(moeviews) {
+function generateSiteMap(jejeups) {
   return `<?xml version="1.0" encoding="UTF-8"?>
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-      ${moeviews
+      ${jejeups
         .map(({ idx, created }) => {
           return `
             <url>
-              <loc>https://moe.dev1stud.io/${idx}</loc>
+              <loc>https://semo.dev1stud.io/${idx}</loc>
               <lastmod>${created}</lastmod>
             </url>
           `;
@@ -21,9 +21,9 @@ function generateSiteMap(moeviews) {
 function SiteMap() {}
 
 export async function getServerSideProps({ res }) {
-  const moeviewRequest = await fetch(MoeviewAPI);
-  const moeviews = await moeviewRequest.json();
-  const sitemap = generateSiteMap(moeviews);
+  const jejeupRequest = await fetch(JejeupAPI);
+  const jejeups = await jejeupRequest.json();
+  const sitemap = generateSiteMap(jejeups);
 
   res.setHeader('Content-Type', 'text/xml');
   res.write(sitemap);

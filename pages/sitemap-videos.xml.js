@@ -1,10 +1,10 @@
-const MoeviewAPI = 'https://moe.dev1stud.io/api/sitemap';
-// const MoeviewAPI = 'http://localhost:3123/api/sitemap';
+const VideosAPI = 'https://moe.dev1stud.io/api/sitemap';
+// const VideosAPI = 'http://localhost:3123/api/sitemap';
 
-function generateSiteMap(moeviews) {
+function generateSiteMap(videos) {
   return `<?xml version="1.0" encoding="UTF-8"?>
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-      ${moeviews
+      ${videos
         .map(({ idx, created }) => {
           return `
             <url>
@@ -21,9 +21,9 @@ function generateSiteMap(moeviews) {
 function SiteMap() {}
 
 export async function getServerSideProps({ res }) {
-  const moeviewRequest = await fetch(MoeviewAPI);
-  const moeviews = await moeviewRequest.json();
-  const sitemap = generateSiteMap(moeviews);
+  const videoRequest = await fetch(VideosAPI);
+  const videos = await videoRequest.json();
+  const sitemap = generateSiteMap(videos);
 
   res.setHeader('Content-Type', 'text/xml');
   res.write(sitemap);

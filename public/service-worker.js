@@ -1,4 +1,4 @@
-const CACHE_NAME = 'meoview-data';
+const CACHE_NAME = 'moe-data';
 
 self.addEventListener('fetch', (event) => {
   if (event.request.url.includes('/api/notices')) {

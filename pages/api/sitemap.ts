@@ -1,9 +1,9 @@
-import { formatDate } from '@/lib/apis';
 import type { NextApiRequest, NextApiResponse } from 'next';
+import { formatDate } from '@/lib/apis';
 
 async function fetchAllMoeviewData() {
   let response = await fetch(
-    `${process.env.STRAPI_URL}/api/moeview-jejeups?sort[0]=id:desc&pagination[page]=1&pagination[pageSize]=100`,
+    `${process.env.STRAPI_URL}/api/moeview-videos?sort[0]=id:desc&pagination[page]=1&pagination[pageSize]=100`,
     {
       method: 'GET',
       headers: {
@@ -16,7 +16,7 @@ async function fetchAllMoeviewData() {
   let allNewsData = [];
   for (let page = 1; page <= pageCount; page++) {
     response = await fetch(
-      `${process.env.STRAPI_URL}/api/moeview-jejeups?sort[0]=id:desc&pagination[page]=${page}&pagination[pageSize]=100`,
+      `${process.env.STRAPI_URL}/api/moeview-videos?sort[0]=id:desc&pagination[page]=${page}&pagination[pageSize]=100`,
       {
         method: 'GET',
         headers: {
