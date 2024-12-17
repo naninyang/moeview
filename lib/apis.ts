@@ -40,8 +40,6 @@ export async function getRenew(page?: number) {
 }
 
 export async function getMoeviewData(page?: number, pageSize?: number, type?: string, isType?: string) {
-  console.log('isType: ', isType);
-  console.log('type: ', type);
   let filterQuery = `${process.env.STRAPI_URL}/api/moeview-videos?sort[0]=id:desc&pagination[page]=${page}&pagination[pageSize]=${pageSize}`;
   if (isProduction) {
     if (isType === 'isBoth') {

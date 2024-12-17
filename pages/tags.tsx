@@ -185,8 +185,8 @@ function Tags({ horrorFilmData, horrorFilmError }: { horrorFilmData: any; horror
             <div className={styles.headline}>
               <h2 className="April16thPromise">
                 <Anchor href="/amusement?tag=healing&page=1">
-                  <span>#힐링</span> <span>#치유</span> <span>#감동</span> <span>#드라마</span> <span>#영화</span>{' '}
-                  <span>#애니</span> <span>#유튜브리뷰</span>
+                  <span>#힐링</span> <span>#치유</span> <span>#감동</span> <span>#영화</span> <span>#애니</span>{' '}
+                  <span>#유튜브리뷰</span>
                 </Anchor>
                 {process.env.NODE_ENV === 'development' && healingData && ` ${healingData.total}개`}
               </h2>
