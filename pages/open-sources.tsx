@@ -43,11 +43,11 @@ function OpenSources({ licenses }: { licenses: License[] }) {
         <dl>
           <div>
             <dt>UX Designer & Developer</dt>
-            <dd className="April16thPromise">클로이 Chloe</dd>
+            <dd>클로이 Chloe</dd>
           </div>
           <div>
             <dt>Curator & Informator</dt>
-            <dd className="April16thPromise">클로이 Chloe</dd>
+            <dd>클로이 Chloe</dd>
           </div>
         </dl>
         <p>

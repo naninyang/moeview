@@ -963,7 +963,7 @@ function Amusement({
             <div className={styles.content}>
               <div className="headline without-select">
                 <h1 className="April16thPromise">
-                  <em>찾을 수 없는 연결고리</em> <span className="preview">Not Found Literature</span>
+                  <em>찾을 수 없는 연결고리</em> <span>Not Found Literature</span>
                 </h1>
               </div>
               <section className={styles.error}>
@@ -981,7 +981,7 @@ function Amusement({
             <div className={styles.content}>
               <div className="headline">
                 <h1 className="April16thPromise">
-                  <em>플랫폼을 찾을 수 없어요</em> <span className="preview">Not found platform</span>
+                  <em>플랫폼을 찾을 수 없어요</em> <span>Not found platform</span>
                 </h1>
                 <div className="select">
                   <select onChange={handlePlatformChange} defaultValue={platform}>
@@ -1354,7 +1354,7 @@ function Amusement({
                 <h1 className="April16thPromise">
                   <em dangerouslySetInnerHTML={{ __html: title }} />
                   {categoryData.data.length === 0 ? (
-                    <span className="preview">Not found category</span>
+                    <span>Not found category</span>
                   ) : (
                     process.env.NODE_ENV === 'development' && <span>({categoryData.total}개 작품)</span>
                   )}
@@ -1456,7 +1456,7 @@ function Amusement({
                 <h1 className="April16thPromise">
                   <em dangerouslySetInnerHTML={{ __html: title }} />{' '}
                   {tagData.data.length === 0 ? (
-                    <span className="preview">Not found hash tag</span>
+                    <span>Not found hash tag</span>
                   ) : (
                     process.env.NODE_ENV === 'development' && <span>({tagData.total}개 작품)</span>
                   )}
@@ -1565,7 +1565,7 @@ function Amusement({
                 <h1 className="April16thPromise">
                   <em dangerouslySetInnerHTML={{ __html: title }} />{' '}
                   {hangukData.data.length === 0 ? (
-                    <span className="preview">Not found script</span>
+                    <span>Not found script</span>
                   ) : (
                     process.env.NODE_ENV === 'development' && <span>({hangukData.total}개 작품)</span>
                   )}
@@ -1617,7 +1617,7 @@ function Amusement({
                 <h1 className="April16thPromise">
                   <em dangerouslySetInnerHTML={{ __html: title }} />{' '}
                   {subdubData.data.length === 0 ? (
-                    <span className="preview">Not found subtitle or dubbing</span>
+                    <span>Not found subtitle or dubbing</span>
                   ) : (
                     process.env.NODE_ENV === 'development' && <span>({subdubData.total}개 작품)</span>
                   )}
@@ -1668,7 +1668,7 @@ function Amusement({
                 <h1 className="April16thPromise">
                   <em dangerouslySetInnerHTML={{ __html: title }} />{' '}
                   {bfreeData.data.length === 0 ? (
-                    <span className="preview">Not found barrier-free</span>
+                    <span>Not found barrier-free</span>
                   ) : (
                     process.env.NODE_ENV === 'development' && <span>({bfreeData.total}개 작품)</span>
                   )}
@@ -1717,7 +1717,7 @@ function Amusement({
             <div className={styles.content}>
               <div className="headline without-select">
                 <h1 className="April16thPromise">
-                  <em>찾을 수 없는 연결고리</em> <span className="preview">Not Found Literature</span>
+                  <em>찾을 수 없는 연결고리</em> <span>Not Found Literature</span>
                 </h1>
               </div>
               <section>

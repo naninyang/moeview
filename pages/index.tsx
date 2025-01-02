@@ -358,7 +358,7 @@ function Home({ bannerData, bannerError }: { bannerData: any; bannerError: strin
               </div>
             )}
             <div className={styles.headline}>
-              <h2 className="April16thPromise">
+              <h2>
                 <Anchor href="/amusement?category=ott&page=1">OTT 오리지널 리뷰</Anchor>
                 {process.env.NODE_ENV === 'development' && ottData && ` ${ottData.total}개`}
               </h2>
@@ -381,9 +381,7 @@ function Home({ bannerData, bannerError }: { bannerData: any; bannerError: strin
                       <Link key={index} href={`/amusement/${amusement.idx}`} scroll={false} shallow={true}>
                         <AmusementItem amusement={amusement} />
                         <strong>
-                          <span className="seed">
-                            {amusement.titleKorean ? amusement.titleKorean : amusement.title}
-                          </span>
+                          <span>{amusement.titleKorean ? amusement.titleKorean : amusement.title}</span>
                         </strong>
                       </Link>
                     ))}
@@ -393,7 +391,7 @@ function Home({ bannerData, bannerError }: { bannerData: any; bannerError: strin
               )}
             </section>
             <div className={styles.headline}>
-              <h2 className="April16thPromise">
+              <h2>
                 <Anchor href="/amusement?tag=healing&page=1">
                   <span>#힐링</span> <span>#치유</span> <span>#감동</span> <span>#영화</span> <span>#애니</span>{' '}
                   <span>#유튜브리뷰</span>
@@ -419,9 +417,7 @@ function Home({ bannerData, bannerError }: { bannerData: any; bannerError: strin
                       <Link key={index} href={`/amusement/${amusement.idx}`} scroll={false} shallow={true}>
                         <AmusementItem amusement={amusement} />
                         <strong>
-                          <span className="seed">
-                            {amusement.titleKorean ? amusement.titleKorean : amusement.title}
-                          </span>
+                          <span>{amusement.titleKorean ? amusement.titleKorean : amusement.title}</span>
                         </strong>
                       </Link>
                     ))}
@@ -431,7 +427,7 @@ function Home({ bannerData, bannerError }: { bannerData: any; bannerError: strin
               )}
             </section>
             <div className={styles.headline}>
-              <h2 className="April16thPromise">
+              <h2>
                 <Anchor href="/amusement?subdub=dubbing&page=1">한국어 더빙 공식 지원!</Anchor>
                 {process.env.NODE_ENV === 'development' && dubbingData && ` ${dubbingData.total}개`}
               </h2>
@@ -454,9 +450,7 @@ function Home({ bannerData, bannerError }: { bannerData: any; bannerError: strin
                       <Link key={index} href={`/amusement/${amusement.idx}`} scroll={false} shallow={true}>
                         <AmusementItem amusement={amusement} supportLanguage={'dubbing'} />
                         <strong>
-                          <span className="seed">
-                            {amusement.titleKorean ? amusement.titleKorean : amusement.title}
-                          </span>
+                          <span>{amusement.titleKorean ? amusement.titleKorean : amusement.title}</span>
                         </strong>
                       </Link>
                     ))}
@@ -466,7 +460,7 @@ function Home({ bannerData, bannerError }: { bannerData: any; bannerError: strin
               )}
             </section>
             <div className={styles.headline}>
-              <h2 className="April16thPromise">
+              <h2>
                 <Anchor href="/amusement?bfree=bfree&page=1">CC(SDH)/AD 둘다 지원하는 작품!</Anchor>
                 {process.env.NODE_ENV === 'development' && bfreeData && ` ${bfreeData.total}개`}
               </h2>
@@ -489,9 +483,7 @@ function Home({ bannerData, bannerError }: { bannerData: any; bannerError: strin
                       <Link key={index} href={`/amusement/${amusement.idx}`} scroll={false} shallow={true}>
                         <AmusementItem amusement={amusement} supportLanguage={'bfree'} />
                         <strong>
-                          <span className="seed">
-                            {amusement.titleKorean ? amusement.titleKorean : amusement.title}
-                          </span>
+                          <span>{amusement.titleKorean ? amusement.titleKorean : amusement.title}</span>
                         </strong>
                       </Link>
                     ))}
@@ -503,7 +495,7 @@ function Home({ bannerData, bannerError }: { bannerData: any; bannerError: strin
           </div>
           <div className={styles['review-content']}>
             <div className={styles.headline}>
-              <h2 className="April16thPromise">
+              <h2>
                 <Anchor href="/reviews?page=1">리뷰 영상</Anchor>
                 {process.env.NODE_ENV === 'development' && count && reviewData && ` ${count.total}개`}
               </h2>

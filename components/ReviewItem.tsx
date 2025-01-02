@@ -176,7 +176,7 @@ export function MoeviewMeta({ moeview }: { moeview: any }) {
                 </div>
               ) : (
                 <Link key={moeview.idx} href={`/moeview/${moeview.idx}`} scroll={false} shallow={true}>
-                  <div className={`${styles.preview} preview`}>
+                  <div className={styles.preview}>
                     <div className={styles['preview-container']}>
                       <div className={styles.thumbnail}>
                         <Image
@@ -208,7 +208,7 @@ export function MoeviewMeta({ moeview }: { moeview: any }) {
                                 )}
                                 {moeview.embeddingOff && (
                                   <div className={styles.embed} aria-label="퍼가기 금지 영상">
-                                    <strong className="preview">퍼가기 금지 콘텐츠</strong>
+                                    <strong>퍼가기 금지 콘텐츠</strong>
                                   </div>
                                 )}
                               </div>
@@ -610,7 +610,7 @@ export function ReviewItem({ moeview }: { moeview: any }) {
           </dt>
           <dd>
             <strong aria-label="작품명">
-              <span className={`${styles.title} April16thPromise`}>
+              <span className={styles.title}>
                 {moeview.amusementData.titleKorean ? moeview.amusementData.titleKorean : moeview.amusementData.title}
               </span>
               {moeview.amusementData.lang === 'chineseBeonche' && (

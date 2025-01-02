@@ -258,7 +258,7 @@ export function MoeviewMeta({ moeview }: { moeview: any }) {
               ) : (
                 <>
                   {isExtraSmall ? (
-                    <div className={`${styles.preview} ${styles.mini} preview`}>
+                    <div className={`${styles.preview} ${styles.mini}`}>
                       <Link key={moeview.idx} href={`/moeview/${moeview.idx}`} scroll={false} shallow={true}>
                         <div className={styles['preview-mini']}>
                           <div className={styles['preview-info']}>
@@ -288,7 +288,7 @@ export function MoeviewMeta({ moeview }: { moeview: any }) {
                                   )}
                                   {moeview.embeddingOff && (
                                     <div className={styles.embed} aria-label="퍼가기 금지 영상">
-                                      <strong className="preview">퍼가기 금지 콘텐츠</strong>
+                                      <strong>퍼가기 금지 콘텐츠</strong>
                                     </div>
                                   )}
                                 </div>
@@ -303,7 +303,7 @@ export function MoeviewMeta({ moeview }: { moeview: any }) {
                     </div>
                   ) : (
                     <Link key={moeview.idx} href={`/moeview/${moeview.idx}`} scroll={false} shallow={true}>
-                      <div className={`${styles.preview} preview`}>
+                      <div className={styles.preview}>
                         <div className={styles['preview-container']}>
                           <div className={styles.thumbnail}>
                             <Image
@@ -335,7 +335,7 @@ export function MoeviewMeta({ moeview }: { moeview: any }) {
                                     )}
                                     {moeview.embeddingOff && (
                                       <div className={styles.embed} aria-label="퍼가기 금지 영상">
-                                        <strong className="preview">퍼가기 금지 콘텐츠</strong>
+                                        <strong>퍼가기 금지 콘텐츠</strong>
                                       </div>
                                     )}
                                   </div>
@@ -423,7 +423,7 @@ export function TagsItem({ items, type }: { items: any; type: string }) {
     return (
       <div className={styles.tags}>
         <dt>태그</dt>
-        <dd className="April16thPromise">
+        <dd>
           {filteredTags.map((tag: string, index: number) => (
             <span key={index}>{`#${TagName(tag, 'tag')}`} </span>
           ))}

@@ -72,6 +72,13 @@ const April16thSafety = localFont({
 const Happiness = localFont({
   src: './fonts/HappinessSansVF.woff2',
   style: 'normal',
+  variable: '--happiness',
+});
+
+const Square = localFont({
+  src: './fonts/NanumSquareNeoVF.woff2',
+  style: 'normal',
+  variable: '--square',
 });
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -169,9 +176,6 @@ export default function App({ Component, pageProps }: AppProps) {
           [lang='zh-Hant'] {
             font-family: ${fontEN.style.fontFamily}, ${fontTC.style.fontFamily}, ${fontKR.style.fontFamily}, sans-serif;
           }
-          .preview {
-            font-family: ${fontEN.style.fontFamily}, ${fontKR.style.fontFamily}, sans-serif;
-          }
           .number,
           time {
             font-family: ${fontEN.style.fontFamily}, sans-serif;
@@ -191,9 +195,11 @@ export default function App({ Component, pageProps }: AppProps) {
           }
         `}
       </style>
-      <Header />
-      <Component {...pageProps} />
-      <Footer />
+      <div className={`${Happiness.variable} ${Square.variable}`}>
+        <Header />
+        <Component {...pageProps} />
+        <Footer />
+      </div>
     </>
   );
 }

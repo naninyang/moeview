@@ -136,7 +136,7 @@ function Categories({ filmData, filmError }: { filmData: any; filmError: string 
         {!error && (
           <>
             <div className={styles.headline}>
-              <h2 className="April16thPromise">
+              <h2>
                 <Anchor href="/amusement?category=film&page=1">영화 리뷰</Anchor>
                 {process.env.NODE_ENV === 'development' && filmData && ` ${filmData.total}개`}
               </h2>
@@ -157,13 +157,13 @@ function Categories({ filmData, filmError }: { filmData: any; filmError: string 
                   <Link key={index} href={`/amusement/${amusement.idx}`} scroll={false} shallow={true}>
                     <AmusementItem amusement={amusement} />
                     <strong>
-                      <span className="seed">{amusement.titleKorean ? amusement.titleKorean : amusement.title}</span>
+                      <span>{amusement.titleKorean ? amusement.titleKorean : amusement.title}</span>
                     </strong>
                   </Link>
                 ))}
             </section>
             <div className={styles.headline}>
-              <h2 className="April16thPromise">
+              <h2>
                 <Anchor href="/amusement?category=anime&page=1">시리즈 리뷰</Anchor>
                 {process.env.NODE_ENV === 'development' && animeData && ` ${animeData.total}개`}
               </h2>
@@ -186,9 +186,7 @@ function Categories({ filmData, filmError }: { filmData: any; filmError: string 
                       <Link key={index} href={`/amusement/${amusement.idx}`} scroll={false} shallow={true}>
                         <AmusementItem amusement={amusement} />
                         <strong>
-                          <span className="seed">
-                            {amusement.titleKorean ? amusement.titleKorean : amusement.title}
-                          </span>
+                          <span>{amusement.titleKorean ? amusement.titleKorean : amusement.title}</span>
                         </strong>
                       </Link>
                     ))}
@@ -198,7 +196,7 @@ function Categories({ filmData, filmError }: { filmData: any; filmError: string 
               )}
             </section>
             <div className={styles.headline}>
-              <h2 className="April16thPromise">
+              <h2>
                 <Anchor href="/amusement?category=ott&page=1">OTT 오리지널 리뷰</Anchor>
                 {process.env.NODE_ENV === 'development' && ottData && ` ${ottData.total}개`}
               </h2>
@@ -221,9 +219,7 @@ function Categories({ filmData, filmError }: { filmData: any; filmError: string 
                       <Link key={index} href={`/amusement/${amusement.idx}`} scroll={false} shallow={true}>
                         <AmusementItem amusement={amusement} />
                         <strong>
-                          <span className="seed">
-                            {amusement.titleKorean ? amusement.titleKorean : amusement.title}
-                          </span>
+                          <span>{amusement.titleKorean ? amusement.titleKorean : amusement.title}</span>
                         </strong>
                       </Link>
                     ))}
@@ -237,7 +233,7 @@ function Categories({ filmData, filmError }: { filmData: any; filmError: string 
         <aside className={styles.hanguk}>
           <Hanguk />
           <p>자막 / 더빙 / 베리어프리 작품 확인!</p>
-          <p className="April16thPromise">
+          <p>
             <Anchor href="/hanguk">작품 확인하기!</Anchor>
           </p>
         </aside>

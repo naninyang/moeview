@@ -72,7 +72,7 @@ function Works({ currentPage, worksData, error }: { currentPage: number; worksDa
                     <Link href={`/amusement/${amusement.idx}`} scroll={false} shallow={true}>
                       <AmusementItem amusement={amusement} page="square" />
                       <strong>
-                        <span className="seed">{amusement.titleKorean ? amusement.titleKorean : amusement.title}</span>
+                        <span>{amusement.titleKorean ? amusement.titleKorean : amusement.title}</span>
                       </strong>
                       {(amusement.related || amusement.amusementsCount !== undefined) && (
                         <ul>

@@ -202,8 +202,8 @@
           color: design.$hex-light
 
       h1, h2
+        @include design.fw(square, 800)
         font-size: design.rem(20)
-        font-weight: 800
 
         @include design.mq(minMedium)
           font-size: design.rem(24)
@@ -303,7 +303,7 @@
           transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1) 0s
 
           span
-            font-variation-settings: 'opsz' 700, 'wght' 700
+            @include design.fw(square, 800)
 
           cite
             display: block
@@ -749,6 +749,7 @@
       position: relative
       z-index: 7
       color: design.$hex-white
+      @include design.fw(square, 800)
 
     a
       color: design.$hex-white

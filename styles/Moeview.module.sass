@@ -545,8 +545,8 @@
                   &.title
                     margin-bottom: design.rem(5)
                     font-size: design.rem(20)
-                    font-weight: 800
                     color: design.$hex-dark
+                    @include design.fw(happiness, 900)
 
                   &[lang="en"], &[lang="ko"]
                     font-weight: 800
@@ -617,6 +617,8 @@
               color: design.$hex-dark
               font-variation-settings: 'opsz' 800, 'wght' 800
               @include design.ellipsis
+              white-space: normal
+              @include design.fw(happiness, 800)
 
           .more
             font-size: design.rem(16)
@@ -650,8 +652,8 @@
           display: flex
           align-items: center
           gap: design.rem(7)
+          @include design.fw(square, 800)
           font-size: design.rem(20)
-          font-weight: 800
 
           &::before
             content: ''
@@ -1007,7 +1009,7 @@
           content: '•'
           padding-right: design.rem(3)
           font-size: design.rem(14)
-          color: design.$hex-azalea
+          color: design.$hex-dark
 
       &.items-related
         display: flex

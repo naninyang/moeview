@@ -567,7 +567,7 @@ export function MoeviewMeta({ moeviewData, moeviewId }: { moeviewData: any; moev
                   </div>
                 </div>
               ) : (
-                <div className={`${styles.preview} preview`}>
+                <div className={styles.preview}>
                   <div className={styles.video}>
                     {moeviewData.attributes.embeddingOff ? (
                       <div className={styles.embeddingOff}>
@@ -780,7 +780,7 @@ export default function MoeviewDetail({
             </Anchor>
           </div>
           <article className={styles['article-moeview']}>
-            <div className={`${styles.preview} preview`}>
+            <div className={styles.preview}>
               <div className={styles.video}>
                 <YouTubeController
                   videoId={'ARJ5bXkof30'}
@@ -1587,7 +1587,7 @@ export default function MoeviewDetail({
                     )}
                     {moeviewData.attributes.review && (
                       <div className={styles.comment}>
-                        <h2 className="April16thPromise">큐레이터의 영상/작품 리뷰</h2>
+                        <h2>큐레이터의 영상/작품 리뷰</h2>
                         <ReviewContent data={moeviewData.attributes.review} />
                       </div>
                     )}
@@ -1595,7 +1595,7 @@ export default function MoeviewDetail({
                     moeviewData.amusementData[0].category !== 'game_fan' ? (
                       <>
                         <div className={styles.title}>
-                          <h2 className="April16thPromise">작품 정보</h2>
+                          <h2>작품 정보</h2>
                           <div className={styles.function}>
                             <button onClick={copyToClipboard}>
                               <ClipboardIcon /> <span>URL 복사</span>
@@ -1634,7 +1634,7 @@ export default function MoeviewDetail({
                                     <AmusementInfo amusementData={data} />
                                     {data.bfree !== null && (
                                       <div className={styles.bfree}>
-                                        <h2 className="April16thPromise">베리어프리 작품 보기</h2>
+                                        <h2>베리어프리 작품 보기</h2>
                                         {moeviewData.amusementData.map((data, index) => (
                                           <React.Fragment key={index}>{bfreeServiceItem(data.bfree)}</React.Fragment>
                                         ))}
@@ -1647,7 +1647,7 @@ export default function MoeviewDetail({
                         </div>
                         {Array.isArray(moeviewData.amusementData) && moeviewData.amusementData.length == 1 && (
                           <div className={styles.posters}>
-                            <h2 className="April16thPromise">비주얼/포스터</h2>
+                            <h2>비주얼/포스터</h2>
                             <div className={`${styles['poster-list']} ${styles['posters-other']}`}>
                               <div className={styles.poster}>
                                 <Image
@@ -1687,7 +1687,7 @@ export default function MoeviewDetail({
                   </div>
                 </>
               ) : (
-                <div className={`${styles.preview} preview`}>
+                <div className={styles.preview}>
                   <div className={styles.video}>
                     <YouTubeController
                       videoId={'erONHczFnGA'}
@@ -1701,7 +1701,7 @@ export default function MoeviewDetail({
               )}
             </>
           ) : (
-            <div className={`${styles.preview} preview`}>
+            <div className={styles.preview}>
               <div className={styles.video}>
                 <YouTubeController
                   videoId={'ARJ5bXkof30'}
