@@ -1,0 +1,26 @@
+{
+  "name": "모애뷰 MOEVIEW",
+  "short_name": "모애뷰",
+  "description": "모듬 애니리뷰",
+  "scope": "/",
+  "id": "/",
+  "start_url": "/",
+  "theme_color": "#eef5ff",
+  "background_color": "#eef5ff",
+  "display": "standalone",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/favicon/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/favicon/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
