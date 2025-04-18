@@ -287,7 +287,7 @@ function Home({ bannerData, bannerError }: { bannerData: any; bannerError: strin
                                   <div className={styles.summary} style={{ color: '#000' }}>
                                     <p>{banner.description}</p>
                                     <em>
-                                      ({banner.author} ‘{banner.title}’ {banner.type === 'wavve' && '시리즈'})
+                                      ({banner.author} ‘{banner.title}’
                                     </em>
                                   </div>
                                   <Background color={banner.color} />
@@ -302,7 +302,7 @@ function Home({ bannerData, bannerError }: { bannerData: any; bannerError: strin
                                   <div className={styles.summary} style={{ color: banner.isLight ? '#000' : '#fff' }}>
                                     <p>{banner.description}</p>
                                     <em>
-                                      ({banner.author} ‘{banner.title}’ {banner.type === 'wavve' && '시리즈'})
+                                      ({banner.author} ‘{banner.title}’
                                     </em>
                                   </div>
                                   <Background color={banner.color} />
