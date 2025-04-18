@@ -241,13 +241,13 @@ function Home({ bannerData, bannerError }: { bannerData: any; bannerError: strin
                       .sort((a, b) => a.order - b.order)
                       .map((banner: BannerData) => (
                         <div key={banner.order}>
-                          {banner.type === 'anime' ? (
+                          {banner.type !== 'semoview' ? (
                             <>
                               {isMobile ? (
                                 <Anchor
                                   href={banner.link}
                                   style={{
-                                    background: `url(https://cdn.dev1stud.io/semoview/banner/pao-${banner.type}.webp) no-repeat 50% 50%/contain`,
+                                    background: `url(https://cdn.dev1stud.io/moeview/banner/pao-${banner.type}.webp) no-repeat 50% 50%/contain`,
                                   }}
                                 >
                                   <div className={styles.summary} style={{ color: '#000' }}>
@@ -262,7 +262,7 @@ function Home({ bannerData, bannerError }: { bannerData: any; bannerError: strin
                                 <Anchor
                                   href={banner.link}
                                   style={{
-                                    background: `url(https://cdn.dev1stud.io/semoview/banner/bread-${banner.type}.webp) no-repeat 50% 50%/contain`,
+                                    background: `url(https://cdn.dev1stud.io/moeview/banner/bread-${banner.type}.webp) no-repeat 50% 50%/contain`,
                                   }}
                                 >
                                   <div className={styles.summary} style={{ color: banner.isLight ? '#000' : '#fff' }}>
@@ -281,7 +281,7 @@ function Home({ bannerData, bannerError }: { bannerData: any; bannerError: strin
                                 <Anchor
                                   href={`https://semo.dev1stud.io/${banner.link}`}
                                   style={{
-                                    background: `url(https://cdn.dev1stud.io/semoview/banner/pao-${banner.type}.webp) no-repeat 50% 50%/contain`,
+                                    background: `url(https://cdn.dev1stud.io/moeview/banner/pao-${banner.type}.webp) no-repeat 50% 50%/contain`,
                                   }}
                                 >
                                   <div className={styles.summary} style={{ color: '#000' }}>
@@ -296,7 +296,7 @@ function Home({ bannerData, bannerError }: { bannerData: any; bannerError: strin
                                 <Anchor
                                   href={`https://semo.dev1stud.io/${banner.link}`}
                                   style={{
-                                    background: `url(https://cdn.dev1stud.io/semoview/banner/bread-${banner.type}.webp) no-repeat 50% 50%/contain`,
+                                    background: `url(https://cdn.dev1stud.io/moeview/banner/bread-${banner.type}.webp) no-repeat 50% 50%/contain`,
                                   }}
                                 >
                                   <div className={styles.summary} style={{ color: banner.isLight ? '#000' : '#fff' }}>

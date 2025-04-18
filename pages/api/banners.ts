@@ -13,7 +13,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     }
   } else {
     try {
-      const response = await fetch(`${process.env.STRAPI_URL}/api/banner-semoviews/${id}`, {
+      const response = await fetch(`${process.env.STRAPI_URL}/api/banner-moeviews/${id}`, {
         headers: {
           Authorization: `Bearer ${process.env.STRAPI_BEARER_TOKEN}`,
         },

@@ -890,7 +890,7 @@ export async function getMoeviewAmusementData(page?: number, pageSize?: number, 
 
 export async function getBannerData() {
   const response = await fetch(
-    `${process.env.STRAPI_URL}/api/banner-semoviews?sort[0]=id:desc&pagination[page]=1&pagination[pageSize]=10`,
+    `${process.env.STRAPI_URL}/api/banner-moeviews?sort[0]=id:desc&pagination[page]=1&pagination[pageSize]=10`,
     {
       method: 'GET',
       headers: {
