@@ -2048,15 +2048,7 @@ export default function Amusement({
       )}
       {data && !isMoeviewsLoading && !isMoeviewsError && (
         <section>
-          {amusementData.attributes.category === 'game' || amusementData.attributes.category === 'game_fan' ? (
-            <h2 className={`${isSafari ? 'April16thPromise' : 'April16thSafety'}`}>
-              {amusementData.attributes.category === 'game'
-                ? '유튜브 리뷰 & 실황모음'
-                : checkKorean(amusementData.attributes.title)}
-            </h2>
-          ) : (
-            <h2 className={`${isSafari ? 'April16thPromise' : 'April16thSafety'}`}>유튜브 리뷰 & 요약모음</h2>
-          )}
+          <h2 className={`${isSafari ? 'April16thPromise' : 'April16thSafety'}`}>유튜브 리뷰</h2>
           <div className={styles.list}>
             {Object.keys(data.moeviews).length > 0 && Array.isArray(data.moeviews) ? (
               data.moeviews.map((moeview: MoeviewData) => (

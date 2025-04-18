@@ -39,7 +39,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
               videoId: moeviewVideo,
               reviewId: moeviewID,
               amusementId: moeviewAmusement,
-              site: 'semoview',
+              site: 'moeview',
             },
           }),
         };
